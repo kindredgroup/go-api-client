@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:go="http://www.thoughtworks-studios.com/ns/go">
+  <title><![CDATA[cruise]]></title>
+  <id>http://go.example.com:8153/go/api/pipelines/cruise/stages.xml</id>
+  <author>
+    <name>Go</name>
+  </author>
+  <updated>2012-02-16T18:01:02+05:30</updated>
+  <link rel="self" href="http://go.example.com:8153/go/api/pipelines/cruise/stages.xml"/>
+  <link rel="next" href="http://go.example.com:8153/go/api/pipelines/cruise/stages.xml?before=1544399"/>
+  <entry>
+    <title><![CDATA[cruise(7037) stage smoke-ie(1) Passed]]></title>
+    <updated>2012-02-16T18:01:02+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7037/smoke-ie/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <goleys@example.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="smoke-ie Stage Detail" href="http://go.example.com:8153/go/api/stages/92723.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-ie Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/smoke-ie/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89896.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/smoke-ie/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7037) stage smoke-firefox(1) Passed]]></title>
+    <updated>2012-02-16T17:53:01+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7037/smoke-firefox/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <goleys@example.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/api/stages/92720.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/smoke-firefox/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89896.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/smoke-firefox/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7037) stage dist(1) Passed]]></title>
+    <updated>2012-02-16T17:46:45+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7037/dist/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <goleys@example.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/api/stages/92718.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/dist/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89896.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/dist/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7037) stage plugin-deps(1) Passed]]></title>
+    <updated>2012-02-16T17:38:06+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7037/plugin-deps/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <goleys@example.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="plugin-deps Stage Detail" href="http://go.example.com:8153/go/api/stages/92717.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="plugin-deps Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/plugin-deps/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89896.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/plugin-deps/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7037) stage dev(1) Passed]]></title>
+    <updated>2012-02-16T17:36:16+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7037/dev/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <goleys@example.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/api/stages/92713.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/dev/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89896.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7037/dev/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7036) stage smoke-ie(1) Passed]]></title>
+    <updated>2012-02-16T15:07:49+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7036/smoke-ie/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="smoke-ie Stage Detail" href="http://go.example.com:8153/go/api/stages/92711.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-ie Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/smoke-ie/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89890.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/smoke-ie/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7036) stage smoke-firefox(1) Passed]]></title>
+    <updated>2012-02-16T14:29:33+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7036/smoke-firefox/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/api/stages/92708.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/smoke-firefox/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89890.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/smoke-firefox/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7036) stage dist(1) Passed]]></title>
+    <updated>2012-02-16T14:23:27+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7036/dist/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/api/stages/92706.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/dist/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89890.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/dist/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7036) stage plugin-deps(1) Passed]]></title>
+    <updated>2012-02-16T14:14:19+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7036/plugin-deps/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="plugin-deps Stage Detail" href="http://go.example.com:8153/go/api/stages/92705.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="plugin-deps Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/plugin-deps/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89890.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/plugin-deps/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7036) stage dev(1) Passed]]></title>
+    <updated>2012-02-16T14:12:30+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7036/dev/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/api/stages/92703.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/dev/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89890.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7036/dev/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7035) stage dist-all(1) Passed]]></title>
+    <updated>2012-02-16T13:18:00+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7035/dist-all/1</id>
+    <go:author>
+      <go:name><![CDATA[rappasam]]></go:name>
+    </go:author>
+    <author>
+      <name><![CDATA[Alice & Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="dist-all Stage Detail" href="http://go.example.com:8153/go/api/stages/92702.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dist-all Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/dist-all/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89881.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/dist-all/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7027) stage dist-all(1) Passed]]></title>
+    <updated>2012-02-15T15:23:11+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7027/dist-all/1</id>
+    <go:author>
+      <go:name><![CDATA[rappasam]]></go:name>
+    </go:author>
+    <author>
+      <name><![CDATA[Santosh <santoshh@example.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="dist-all Stage Detail" href="http://go.example.com:8153/go/api/stages/92693.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dist-all Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7027/dist-all/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89733.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7027/dist-all/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7035) stage smoke-ie(1) Passed]]></title>
+    <updated>2012-02-15T13:51:17+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7035/smoke-ie/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="smoke-ie Stage Detail" href="http://go.example.com:8153/go/api/stages/92689.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-ie Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/smoke-ie/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89881.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/smoke-ie/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7035) stage smoke-firefox(1) Passed]]></title>
+    <updated>2012-02-15T13:43:22+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7035/smoke-firefox/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/api/stages/92687.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/smoke-firefox/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89881.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/smoke-firefox/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7035) stage dist(1) Passed]]></title>
+    <updated>2012-02-15T13:38:03+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7035/dist/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/api/stages/92685.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/dist/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89881.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/dist/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7035) stage plugin-deps(1) Passed]]></title>
+    <updated>2012-02-15T13:29:13+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7035/plugin-deps/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="plugin-deps Stage Detail" href="http://go.example.com:8153/go/api/stages/92684.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="plugin-deps Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/plugin-deps/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89881.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/plugin-deps/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7035) stage dev(1) Passed]]></title>
+    <updated>2012-02-15T13:27:33+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7035/dev/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/api/stages/92683.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/dev/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89881.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7035/dev/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7034) stage smoke-ie(1) Passed]]></title>
+    <updated>2012-02-15T10:54:48+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7034/smoke-ie/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="smoke-ie Stage Detail" href="http://go.example.com:8153/go/api/stages/92679.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-ie Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/smoke-ie/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89873.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/smoke-ie/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7034) stage smoke-firefox(1) Passed]]></title>
+    <updated>2012-02-15T10:44:48+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7034/smoke-firefox/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/api/stages/92676.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/smoke-firefox/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89873.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/smoke-firefox/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7034) stage dist(1) Passed]]></title>
+    <updated>2012-02-15T10:38:25+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7034/dist/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/api/stages/92674.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/dist/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89873.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/dist/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7034) stage plugin-deps(1) Passed]]></title>
+    <updated>2012-02-15T10:29:18+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7034/plugin-deps/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="plugin-deps Stage Detail" href="http://go.example.com:8153/go/api/stages/92673.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="plugin-deps Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/plugin-deps/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89873.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/plugin-deps/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7034) stage dev(2) Passed]]></title>
+    <updated>2012-02-15T10:27:41+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7034/dev/2</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/api/stages/92672.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/dev/2" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89873.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/dev/2/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7034) stage dev(1) Cancelled]]></title>
+    <updated>2012-02-14T16:58:19+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7034/dev/1</id>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice & Bob]]></name>
+    </author>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/api/stages/92669.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dev Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/dev/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89873.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7034/dev/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="cancelled" label="Cancelled"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7033) stage smoke-firefox(1) Failed]]></title>
+    <updated>2012-02-14T15:28:22+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7033/smoke-firefox/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/api/stages/92666.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="smoke-firefox Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7033/smoke-firefox/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89869.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7033/smoke-firefox/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="failed" label="Failed"/>
+  </entry>
+  <entry>
+    <title><![CDATA[cruise(7033) stage dist(1) Passed]]></title>
+    <updated>2012-02-14T15:25:03+05:30</updated>
+    <id>http://go.example.com:8153/go/pipelines/cruise/7033/dist/1</id>
+    <author>
+      <name><![CDATA[Alice & Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Bob <bob@gmail.com>]]></name>
+    </author>
+    <author>
+      <name><![CDATA[Alice]]></name>
+    </author>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/api/stages/92664.xml" rel="alternate" type="application/vnd.go+xml"/>
+    <link title="dist Stage Detail" href="http://go.example.com:8153/go/pipelines/cruise/7033/dist/1" rel="alternate" type="text/html"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/api/pipelines/cruise/89869.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+    <link title="cruise Pipeline Detail" href="http://go.example.com:8153/go/pipelines/cruise/7033/dist/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+    <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+  </entry>
+</feed>
