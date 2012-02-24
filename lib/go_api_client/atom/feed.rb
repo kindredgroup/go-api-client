@@ -54,7 +54,7 @@ module GoApiClient
   end
 
   class Pipeline
-    attr_reader :details_link, :id
+    attr_reader :details_link, :id, :commit_messages
     attr_accessor :stages
 
     def initialize(details_link)
@@ -66,6 +66,7 @@ module GoApiClient
       doc = Nokogiri::XML(open(self.details_link))
       @label = doc.root.attributes["label"].value
       @id = doc.root.xpath("//id").first.content
+      @commit_messages = doc.root.xpath("//message").map(&:content)
       self
     end
 

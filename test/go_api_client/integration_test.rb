@@ -19,6 +19,7 @@ class IntegrationTest < Test::Unit::TestCase
     end
     assert_equal "Acceptance", stages.first.name
     assert_equal "Units", stages.last.name
+    assert_equal ["Update README"], pipelines.first.commit_messages
   end
 
   def file_contents(file_name)
