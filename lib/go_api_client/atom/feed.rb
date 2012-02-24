@@ -47,6 +47,7 @@ module GoApiClient
       doc = Nokogiri::XML(open(self.details_link))
       @name = doc.root.xpath("@name").first.value
       @result = doc.root.xpath("//result").first.content
+
       pipeline_link = doc.root.xpath("//pipeline").first.attributes["href"].value
       existing_pipeline =  @pipelines.find {|p| p.same?(pipeline_link)}
       
