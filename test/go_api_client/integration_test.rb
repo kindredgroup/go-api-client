@@ -8,9 +8,11 @@ class IntegrationTest < Test::Unit::TestCase
     stub_request(:get, "http://localhost:8153/go/api/stages/1.xml").to_return(:body => file_contents("stages_1.xml"))
     stub_request(:get, "http://localhost:8153/go/api/stages/2.xml").to_return(:body => file_contents("stages_2.xml"))
     pipelines = GoApiClient.runs("localhost:8153")
-    assert_equal 1, pipelines.count
     stages = pipelines.first.stages
+
+    assert_equal 1, pipelines.count
     assert_equal 2, stages.count
+    assert_equal "oogabooga <twgosaas@gmail.com>", pipelines.first.authors
     stages.each do |stage|
       assert_equal "oogabooga <twgosaas@gmail.com>", stage.authors.first.name
       assert_equal "Failed", stage.result

@@ -21,15 +21,6 @@ module GoApiClient
         self
       end
 
-      def self.construct
-        doc = Nokogiri::XML(open("http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml"))
-        feed = GoApiClient::Atom::Feed.new(doc.root).parse!
-        pipelines = []
-        feed.entries.collect do |entry|
-          pipelines = Stage.new(entry, pipelines).fetch
-        end
-        pipelines
-      end
     end
   end
 
@@ -78,6 +69,11 @@ module GoApiClient
       self
     end
 
+    def authors
+      authors = stages.map(&:authors).flatten
+      authors.map(&:name).flatten.uniq.join(" ,")
+    end
+    
     def same?(link)
       @details_link == link
     end
