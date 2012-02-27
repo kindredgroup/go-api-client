@@ -1,6 +1,6 @@
 module GoApiClient
   class Stage
-    attr_reader :authors, :details_link, :name, :result
+    attr_reader :authors, :details_link, :name, :result, :jobs
 
     def initialize(entry, pipelines)
       @authors = entry.authors
@@ -12,7 +12,9 @@ module GoApiClient
       doc = Nokogiri::XML(open(self.details_link))
       @name = doc.root.xpath("@name").first.value
       @result = doc.root.xpath("//result").first.content
-
+      job_detail_links = doc.root.xpath("//job").collect{|job| job.attributes["href"]}
+      @jobs = Job.build(self, job_detail_links)
+      
       pipeline_link = doc.root.xpath("//pipeline").first.attributes["href"].value
       existing_pipeline =  @pipelines.find {|p| p.same?(pipeline_link)}
       
