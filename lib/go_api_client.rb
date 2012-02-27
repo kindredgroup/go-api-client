@@ -1,7 +1,12 @@
 require 'nokogiri'
+require "open-uri"
+
 require "go_api_client/version"
 require "go_api_client/atom"
-require "open-uri"
+require 'go_api_client/pipeline.rb'
+require 'go_api_client/stage.rb'
+require 'go_api_client/job.rb'
+
 module GoApiClient
   def self.runs(host)
     doc = Nokogiri::XML(open("http://#{host}/go/api/pipelines/defaultPipeline/stages.xml"))
@@ -12,5 +17,4 @@ module GoApiClient
     end
     pipelines
   end
-
 end

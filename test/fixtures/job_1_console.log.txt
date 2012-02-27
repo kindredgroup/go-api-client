@@ -1,0 +1,82 @@
+
+[cruise] Start to prepare defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/saas/go-agent-12.1.0] at Tue Feb 21 15:42:06 GMT+05:30 2012
+
+[cruise] Start updating files at revision f38508a26e1dc27737eb760e39a6aa8220f8b8c6 from git@github.com:oogabooga/zinger.git
+Cloning into '/Users/saas/go-agent-12.1.0/pipelines/defaultPipeline'...
+HEAD is now at f38508a first commit
+
+[cruise] Start to build defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/saas/go-agent-12.1.0] at Tue Feb 21 15:42:15 GMT+05:30 2012
+
+[cruise] Current job status: passed.
+
+[cruise] Start to execute task: <exec command="bundle" >
+<arg>install</arg>
+<arg>--local</arg>
+</exec>. 
+[cruise] setting environment variable 'CRUISE_SERVER_URL' to value 'https://localhost:8154/go' (Deprecated. Use 'GO_SERVER_URL' instead.)
+[cruise] setting environment variable 'GO_SERVER_URL' to value 'https://localhost:8154/go'
+[cruise] setting environment variable 'GO_PIPELINE_NAME' to value 'defaultPipeline'
+[cruise] setting environment variable 'GO_PIPELINE_COUNTER' to value '1'
+[cruise] setting environment variable 'GO_PIPELINE_LABEL' to value '1'
+[cruise] setting environment variable 'GO_STAGE_NAME' to value 'Units'
+[cruise] setting environment variable 'GO_STAGE_COUNTER' to value '1'
+[cruise] setting environment variable 'GO_JOB_NAME' to value 'Test'
+[cruise] setting environment variable 'CRUISE_PIPELINE_NAME' to value 'defaultPipeline' (Deprecated. Use 'GO_PIPELINE_NAME' instead.)
+[cruise] setting environment variable 'CRUISE_PIPELINE_COUNTER' to value '1' (Deprecated. Use 'GO_PIPELINE_COUNTER' instead.)
+[cruise] setting environment variable 'CRUISE_PIPELINE_LABEL' to value '1' (Deprecated. Use 'GO_PIPELINE_LABEL' instead.)
+[cruise] setting environment variable 'CRUISE_STAGE_NAME' to value 'Units' (Deprecated. Use 'GO_STAGE_NAME' instead.)
+[cruise] setting environment variable 'CRUISE_STAGE_COUNTER' to value '1' (Deprecated. Use 'GO_STAGE_COUNTER' instead.)
+[cruise] setting environment variable 'CRUISE_JOB_NAME' to value 'Test' (Deprecated. Use 'GO_JOB_NAME' instead.)
+[cruise] setting environment variable 'GO_REVISION' to value 'f38508a26e1dc27737eb760e39a6aa8220f8b8c6'
+[cruise] setting environment variable 'GO_TO_REVISION' to value 'f38508a26e1dc27737eb760e39a6aa8220f8b8c6'
+[cruise] setting environment variable 'GO_FROM_REVISION' to value 'f38508a26e1dc27737eb760e39a6aa8220f8b8c6'
+[cruise] setting environment variable 'CRUISE_REVISION' to value 'f38508a26e1dc27737eb760e39a6aa8220f8b8c6' (Deprecated. Use 'GO_REVISION' instead.)
+[31mCould not locate Gemfile[0m
+
+[cruise] Start to create properties defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/saas/go-agent-12.1.0] at Tue Feb 21 15:42:16 GMT+05:30 2012
+
+[cruise] Start to upload defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/saas/go-agent-12.1.0] at Tue Feb 21 15:42:16 GMT+05:30 2012
+
+[cruise] Job completed defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/saas/go-agent-12.1.0] at Tue Feb 21 15:42:16 GMT+05:30 2012
+
+[cruise] Start to prepare defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/go/go-agent-12.1.0] at Thu Feb 23 17:16:37 GMT+05:30 2012
+
+[cruise] Start updating files at revision 9f77888d7a594699894a17f4d61fc9dfac3cfb74 from git@github.com:oogabooga/zinger.git
+HEAD is now at 9f77888 Update README
+
+[cruise] Start to build defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/go/go-agent-12.1.0] at Thu Feb 23 17:16:41 GMT+05:30 2012
+
+[cruise] Current job status: passed.
+
+[cruise] Start to execute task: <exec command="bundle" >
+<arg>install</arg>
+<arg>--local</arg>
+</exec>. 
+[cruise] setting environment variable 'CRUISE_SERVER_URL' to value 'https://localhost:8154/go' (Deprecated. Use 'GO_SERVER_URL' instead.)
+[cruise] setting environment variable 'GO_SERVER_URL' to value 'https://localhost:8154/go'
+[cruise] setting environment variable 'GO_PIPELINE_NAME' to value 'defaultPipeline'
+[cruise] setting environment variable 'GO_PIPELINE_COUNTER' to value '1'
+[cruise] setting environment variable 'GO_PIPELINE_LABEL' to value '1'
+[cruise] setting environment variable 'GO_STAGE_NAME' to value 'Units'
+[cruise] setting environment variable 'GO_STAGE_COUNTER' to value '1'
+[cruise] setting environment variable 'GO_JOB_NAME' to value 'Test'
+[cruise] setting environment variable 'CRUISE_PIPELINE_NAME' to value 'defaultPipeline' (Deprecated. Use 'GO_PIPELINE_NAME' instead.)
+[cruise] setting environment variable 'CRUISE_PIPELINE_COUNTER' to value '1' (Deprecated. Use 'GO_PIPELINE_COUNTER' instead.)
+[cruise] setting environment variable 'CRUISE_PIPELINE_LABEL' to value '1' (Deprecated. Use 'GO_PIPELINE_LABEL' instead.)
+[cruise] setting environment variable 'CRUISE_STAGE_NAME' to value 'Units' (Deprecated. Use 'GO_STAGE_NAME' instead.)
+[cruise] setting environment variable 'CRUISE_STAGE_COUNTER' to value '1' (Deprecated. Use 'GO_STAGE_COUNTER' instead.)
+[cruise] setting environment variable 'CRUISE_JOB_NAME' to value 'Test' (Deprecated. Use 'GO_JOB_NAME' instead.)
+[cruise] setting environment variable 'GO_REVISION' to value '9f77888d7a594699894a17f4d61fc9dfac3cfb74'
+[cruise] setting environment variable 'GO_TO_REVISION' to value '9f77888d7a594699894a17f4d61fc9dfac3cfb74'
+[cruise] setting environment variable 'GO_FROM_REVISION' to value '9f77888d7a594699894a17f4d61fc9dfac3cfb74'
+[cruise] setting environment variable 'CRUISE_REVISION' to value '9f77888d7a594699894a17f4d61fc9dfac3cfb74' (Deprecated. Use 'GO_REVISION' instead.)
+Error happened while attempting to execute 'bundle install --local'. 
+Please make sure [bundle] can be executed on this agent.
+
+[Debug Information] Environment variable PATH: /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+
+[cruise] Start to create properties defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/go/go-agent-12.1.0] at Thu Feb 23 17:16:41 GMT+05:30 2012
+
+[cruise] Start to upload defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/go/go-agent-12.1.0] at Thu Feb 23 17:16:41 GMT+05:30 2012
+
+[cruise] Job completed defaultPipeline/1/Units/1/Test on ira.corporate.thoughtworks.com [/Users/go/go-agent-12.1.0] at Thu Feb 23 17:16:41 GMT+05:30 2012
