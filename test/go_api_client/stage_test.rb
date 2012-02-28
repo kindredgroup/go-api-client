@@ -1,6 +1,6 @@
 require "test_helper"
 
-class IntegrationTest < Test::Unit::TestCase
+class StageTest < Test::Unit::TestCase
 
   def setup()
     stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages.xml"))
@@ -11,10 +11,10 @@ class IntegrationTest < Test::Unit::TestCase
     stub_request(:get, "http://localhost:8153/go/api/jobs/2.xml").to_return(:body => file_contents("jobs_2.xml"))
   end
 
-  def test_end_to_end
+  def test_stage
     pipelines = GoApiClient.runs("localhost:8153")
     stages = pipelines.first.stages
-
+    
     assert_equal 1, pipelines.count
     assert_equal 2, stages.count
     assert_equal "oogabooga <twgosaas@gmail.com>", pipelines.first.authors
@@ -26,7 +26,6 @@ class IntegrationTest < Test::Unit::TestCase
     assert_equal "Units", stages.last.name
     assert_equal ["Update README"], pipelines.first.commit_messages
 
-    assert_not_nil stages.first.jobs.first
     assert_equal "http://localhost:8153/go/files/defaultPipeline/1/Acceptance/1/Test/cruise-output/console.log", stages.first.jobs.first.console_log_url
     assert_equal "http://localhost:8153/go/files/defaultPipeline/1/Units/1/Test/cruise-output/console.log", stages.last.jobs.first.console_log_url
   end

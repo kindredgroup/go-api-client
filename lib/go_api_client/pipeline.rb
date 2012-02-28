@@ -1,6 +1,6 @@
 module GoApiClient
   class Pipeline
-    attr_reader :details_link, :id, :commit_messages
+    attr_reader :details_link, :id, :commit_messages, :label
     attr_accessor :stages
 
     def initialize(details_link)
