@@ -16,12 +16,22 @@ module GoApiClient
       assert_equal ["Update README"], pipeline.commit_messages
     end
 
-    def test_pipeline_instance_identified_by_details_link
+    def test_should_return_string_delimited_list_of_authors
       link = "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml"
-      pipeline = GoApiClient::Pipeline.new(link)
+      pipeline = GoApiClient::Pipeline.new(link).fetch
+      author_foo = Atom::Author.new(nil)
+      author_foo.name = 'foo'
+      author_foo.email = 'foo@example.com'
+      author_foo.uri =  'http://foo.example.com'
 
-      assert pipeline.same?(link)
-      assert(false == pipeline.same?("http://localhost:8153/go/api"))
+      author_bar = Atom::Author.new(nil)
+      author_bar.name = 'bar'
+      author_bar.email = 'bar@example.com'
+      author_bar.uri =  'http://bar.example.com'
+
+      pipeline.stages << OpenStruct.new(:authors => [author_foo, author_bar])
+      assert_equal 'foo, bar', pipeline.authors
     end
+
   end
 end

@@ -1,10 +1,7 @@
 module GoApiClient
   module Atom
     class Feed
-      attr_accessor :updated_at
-      attr_accessor :next_page
-      attr_accessor :url
-      attr_accessor :entries
+      attr_accessor :updated_at, :next_page, :url, :entries
 
       def initialize(root)
         @root = root

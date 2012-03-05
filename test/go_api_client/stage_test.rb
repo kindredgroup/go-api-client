@@ -12,7 +12,7 @@ module GoApiClient
       stub_request(:get, "http://localhost:8153/go/api/jobs/2.xml").to_return(:body => file_contents("jobs_2.xml"))
     end
 
-    def test_stage
+    def test_stage_parsing
       pipelines = GoApiClient.runs("localhost:8153")
       stages = pipelines.first.stages
 

@@ -18,11 +18,8 @@ module GoApiClient
 
     def authors
       authors = stages.map(&:authors).flatten
-      authors.map(&:name).flatten.uniq.join(" ,")
+      authors.map(&:name).flatten.uniq.join(", ")
     end
-    
-    def same?(link)
-      @details_link == link
-    end
+
   end
 end

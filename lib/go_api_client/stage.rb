@@ -1,31 +1,28 @@
 module GoApiClient
   class Stage
-    attr_reader :authors, :details_link, :name, :result, :jobs
+    attr_accessor :authors, :stage_link, :name, :result, :jobs, :pipeline
 
     def initialize(entry, pipelines)
       @authors = entry.authors
-      @details_link = entry.stage_href
+      @stage_link = entry.stage_href
       @pipelines = pipelines
     end
 
     def fetch
-      doc = Nokogiri::XML(open(self.details_link))
+      doc = Nokogiri::XML(open(self.stage_link))
       @name = doc.root.xpath("@name").first.value
       @result = doc.root.xpath("//result").first.content
       job_detail_links = doc.root.xpath("//job").collect{|job| job.attributes["href"]}
       @jobs = Job.build(self, job_detail_links)
-      
+
       pipeline_link = doc.root.xpath("//pipeline").first.attributes["href"].value
-      existing_pipeline =  @pipelines.find {|p| p.same?(pipeline_link)}
-      
-      if existing_pipeline
-        existing_pipeline.stages << self
-      else
-        new_pipeline = Pipeline.new(pipeline_link).fetch
-        new_pipeline.stages << self
-        @pipelines << new_pipeline
-      end
-      @pipelines
+
+      pipeline = @pipelines[pipeline_link] || Pipeline.new(pipeline_link).fetch
+      pipeline.stages << self
+
+      @pipelines[pipeline_link] ||= pipeline
+      self
     end
   end
 end
+

@@ -11,10 +11,10 @@ module GoApiClient
   def self.runs(host)
     doc = Nokogiri::XML(open("http://#{host}/go/api/pipelines/defaultPipeline/stages.xml"))
     feed = GoApiClient::Atom::Feed.new(doc.root).parse!
-    pipelines = []
-    feed.entries.collect do |entry|
-      pipelines = Stage.new(entry, pipelines).fetch
+    pipelines = {}
+    feed.entries.each do |entry|
+      Stage.new(entry, pipelines).fetch
     end
-    pipelines
+    pipelines.values
   end
 end
