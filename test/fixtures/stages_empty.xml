@@ -1,0 +1,9 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:go="http://www.thoughtworks-studios.com/ns/go">
+    <title><![CDATA[defaultPipeline]]></title>
+    <id>http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml</id>
+    <author>
+        <name>Go</name>
+    </author>
+    <updated>2012-03-07T11:15:10+05:30</updated>
+    <link rel="self" href="http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml"/>
+</feed>

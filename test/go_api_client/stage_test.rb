@@ -4,7 +4,6 @@ module GoApiClient
   class StageTest < Test::Unit::TestCase
 
     def setup
-      stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages.xml"))
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml").to_return(:body => file_contents("pipelines_1.xml"))
       stub_request(:get, "http://localhost:8153/go/api/stages/1.xml").to_return(:body => file_contents("stages_1.xml"))
       stub_request(:get, "http://localhost:8153/go/api/stages/2.xml").to_return(:body => file_contents("stages_2.xml"))
@@ -13,6 +12,7 @@ module GoApiClient
     end
 
     def test_stage_parsing
+      stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages.xml"))
       pipelines = GoApiClient.runs("localhost:8153")
       stages = pipelines.first.stages
 
@@ -29,6 +29,13 @@ module GoApiClient
 
       assert_equal "http://localhost:8153/go/files/defaultPipeline/1/Acceptance/1/Test/cruise-output/console.log", stages.first.jobs.first.console_log_url
       assert_equal "http://localhost:8153/go/files/defaultPipeline/1/Units/1/Test/cruise-output/console.log", stages.last.jobs.first.console_log_url
+    end
+
+    def test_empty_atom_feed_should_not_throw_up
+      stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages_empty.xml"))
+      pipelines = GoApiClient.runs("localhost:8153")
+
+      assert pipelines.empty?
     end
   end
 end
