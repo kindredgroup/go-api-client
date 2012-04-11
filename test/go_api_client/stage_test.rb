@@ -13,7 +13,7 @@ module GoApiClient
 
     def test_stage_parsing
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages.xml"))
-      pipelines = GoApiClient.runs("localhost:8153")
+      pipelines = GoApiClient.runs("localhost", 8153)
       stages = pipelines.first.stages
 
       assert_equal 1, pipelines.count
@@ -33,7 +33,7 @@ module GoApiClient
 
     def test_empty_atom_feed_should_not_throw_up
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages_empty.xml"))
-      pipelines = GoApiClient.runs("localhost:8153")
+      pipelines = GoApiClient.runs('localhost', 8153)
 
       assert pipelines.empty?
     end
