@@ -9,8 +9,8 @@ require 'go_api_client/stage.rb'
 require 'go_api_client/job.rb'
 
 module GoApiClient
-  def self.runs(host)
-    doc = Nokogiri::XML(open("http://#{host}/go/api/pipelines/defaultPipeline/stages.xml"))
+  def self.runs(host, port="8153")
+    doc = Nokogiri::XML(open("http://#{host}:#{port}/go/api/pipelines/defaultPipeline/stages.xml"))
     feed = GoApiClient::Atom::Feed.new(doc.root).parse!
     pipelines = {}
     feed.entries.each do |entry|
@@ -18,7 +18,7 @@ module GoApiClient
     end
     pipelines.values
   end
-  
+
   def self.schedule_pipeline(host)
     uri = URI("http://#{host}:8153/go/api/pipelines/defaultPipeline/schedule")
     Net::HTTP.post_form(uri, {})
