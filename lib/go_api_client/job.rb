@@ -1,7 +1,7 @@
 module GoApiClient
   class Job
-    attr_reader :artifacts_uri, :console_log_url
-    
+    attr_accessor :artifacts_uri, :console_log_url
+
     def self.build(stage, links)
       @stage = stage
       links.collect do |link|

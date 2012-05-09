@@ -1,6 +1,6 @@
 module GoApiClient
   class Pipeline
-    attr_reader :details_link, :id, :commit_messages, :label
+    attr_accessor :details_link, :id, :commit_messages, :label, :authors
     attr_accessor :stages
 
     def initialize(details_link)
@@ -17,8 +17,10 @@ module GoApiClient
     end
 
     def authors
-      authors = stages.map(&:authors).flatten
-      authors.map(&:name).flatten.uniq.join(", ")
+      @authors ||= begin
+                     stage_authors = stages.map(&:authors).flatten
+                     stage_authors.map(&:name).flatten.uniq.join(", ")
+                   end
     end
 
   end
