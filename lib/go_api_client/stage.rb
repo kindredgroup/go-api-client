@@ -1,6 +1,7 @@
+require 'time'
 module GoApiClient
   class Stage
-    attr_accessor :authors, :stage_link, :name, :result, :jobs, :pipeline
+    attr_accessor :authors, :stage_link, :name, :result, :jobs, :pipeline, :completed_at
 
     def initialize(entry, pipelines)
       @authors = entry.authors
@@ -12,6 +13,7 @@ module GoApiClient
       doc = Nokogiri::XML(open(self.stage_link))
       @name = doc.root.xpath("@name").first.value
       @result = doc.root.xpath("//result").first.content
+      @completed_at = Time.parse(doc.root.xpath("//updated").first.content).utc
       job_detail_links = doc.root.xpath("//job").collect{|job| job.attributes["href"].value}
       @jobs = Job.build(self, job_detail_links)
 

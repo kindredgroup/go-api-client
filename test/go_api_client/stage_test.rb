@@ -22,6 +22,8 @@ module GoApiClient
       assert_equal "http://localhost:8153/go/api/stages/2.xml", stages.first.stage_link
       assert_equal "http://localhost:8153/go/api/stages/1.xml", stages.last.stage_link
 
+      assert_equal [Time.parse("2012-02-23T17:19:31+05:30").utc, Time.parse("2012-02-23T17:16:41+05:30").utc], stages.collect(&:completed_at)
+
       assert_equal "oogabooga <twgosaas@gmail.com>", pipelines.first.authors
       stages.each do |stage|
         assert_equal "oogabooga <twgosaas@gmail.com>", stage.authors.first.name
