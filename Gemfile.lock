@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    go_api_client (0.0.9)
+    go_api_client (0.0.10)
       nokogiri
 
 GEM

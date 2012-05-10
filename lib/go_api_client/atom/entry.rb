@@ -14,7 +14,7 @@ module GoApiClient
         self.stage_href = @root.
           xpath("xmlns:link[@type='application/vnd.go+xml' and  @rel='alternate']").
           first.
-          attributes["href"]
+          attributes["href"].value
 
         self.authors    = @root.xpath('xmlns:author').collect do |author|
           Author.new(author).parse!
