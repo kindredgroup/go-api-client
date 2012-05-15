@@ -27,7 +27,7 @@ module GoApiClient
     end
 
     class << self
-      def parse_git_user(str)
+      def parse(str)
         _, name, email = *str.match(/(.*) <(.+?)>/)
         self.new(name.strip, email.strip)
       end

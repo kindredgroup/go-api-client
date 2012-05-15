@@ -1,7 +1,6 @@
 module GoApiClient
   class Pipeline
-    attr_accessor :details_link, :id, :commit_messages, :label, :authors
-    attr_accessor :stages
+    attr_accessor :details_link, :id, :commit_messages, :label, :authors, :stages
 
     def initialize(details_link)
       @details_link = details_link
@@ -17,10 +16,7 @@ module GoApiClient
     end
 
     def authors
-      @authors ||= begin
-                     stage_authors = stages.map(&:authors).flatten
-                     stage_authors.map(&:name).flatten.uniq.join(", ")
-                   end
+      @authors ||= stages.first.authors
     end
 
   end

@@ -24,9 +24,10 @@ module GoApiClient
 
       assert_equal [Time.parse("2012-02-23T17:19:31+05:30").utc, Time.parse("2012-02-23T17:16:41+05:30").utc], stages.collect(&:completed_at)
 
-      assert_equal "oogabooga <twgosaas@gmail.com>", pipelines.first.authors
+      assert_equal [Atom::Author.new(nil, :name => 'oogabooga', :email => 'twgosaas@gmail.com')], pipelines.first.authors
+
       stages.each do |stage|
-        assert_equal "oogabooga <twgosaas@gmail.com>", stage.authors.first.name
+        assert_equal Atom::Author.new(nil, :name => 'oogabooga', :email => 'twgosaas@gmail.com'), stage.authors.first
         assert_equal "Failed", stage.result
       end
       assert_equal "Acceptance", stages.first.name
