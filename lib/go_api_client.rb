@@ -4,9 +4,11 @@ require 'net/http'
 
 require 'go_api_client/version'
 require 'go_api_client/atom'
-require 'go_api_client/pipeline.rb'
-require 'go_api_client/stage.rb'
-require 'go_api_client/job.rb'
+require 'go_api_client/pipeline'
+require 'go_api_client/stage'
+require 'go_api_client/job'
+require 'go_api_client/commit'
+require 'go_api_client/user'
 
 module GoApiClient
   def self.runs(host, port="8153")
