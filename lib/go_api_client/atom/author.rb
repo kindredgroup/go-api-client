@@ -6,7 +6,7 @@ module GoApiClient
         @root = root
         @name = attributes[:name]
         @email = attributes[:email]
-        @uri = attributes[:url]
+        @uri = attributes[:uri]
       end
 
       def parse!
@@ -24,7 +24,6 @@ module GoApiClient
         self
       end
 
-
       def ==(other)
         other && self.class.equal?(other.class) &&
         name == other.name &&
@@ -37,12 +36,6 @@ module GoApiClient
       end
 
       def to_s
-        s = "#{name} <#{email}>"
-        s << " <#{uri}>" if uri
-        s
-      end
-
-      def inspect
         "GoApiClient::Atom::Author(#{to_s})"
       end
 

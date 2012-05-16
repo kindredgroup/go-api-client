@@ -1,3 +1,4 @@
+require 'time'
 module GoApiClient
   module Atom
     class FeedPage
@@ -8,7 +9,7 @@ module GoApiClient
       end
 
       def parse!
-        self.updated_at = @root.xpath('xmlns:updated').first.content
+        self.updated_at = Time.parse(@root.xpath('xmlns:updated').first.content).utc
         self.next_page  = href_from(@root.xpath("xmlns:link[@rel='next']"))
         self.url        = href_from(@root.xpath("xmlns:link[@rel='self']"))
         self.entries    = @root.xpath("xmlns:entry").collect do |entry|
@@ -35,6 +36,7 @@ module GoApiClient
         end
       end
 
+      private
       def href_from(xml)
         xml.first.attribute('href').value unless xml.empty?
       end

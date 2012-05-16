@@ -1,3 +1,5 @@
+require 'time'
+
 module GoApiClient
   module Atom
     class Entry
@@ -8,7 +10,7 @@ module GoApiClient
       end
 
       def parse!
-        self.updated_at = @root.xpath('xmlns:updated').first.content
+        self.updated_at = Time.parse(@root.xpath('xmlns:updated').first.content).utc
         self.id         = @root.xpath('xmlns:id').first.content
         self.title      = @root.xpath('xmlns:title').first.content
         self.stage_href = @root.
