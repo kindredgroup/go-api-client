@@ -12,7 +12,7 @@ module GoApiClient
     test "should strip name and email when parsing" do
       user = User.parse("foobar1                         <foo1@example.com>")
       assert_equal 'foobar1', user.name
-      assert_equal 'foo1@example.com', user.email      
+      assert_equal 'foo1@example.com', user.email
     end
 
     test "equality" do

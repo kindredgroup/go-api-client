@@ -9,7 +9,7 @@ module GoApiClient
       @root = root
       super(attributes)
     end
-    
+
     def parse!
       @revision = @root.xpath("./revision").first.content
       @message  = @root.xpath("./message").first.content

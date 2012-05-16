@@ -13,7 +13,7 @@ module GoApiClient
       name == other.name &&
       email == other.email
     end
-    
+
     def hash
       self.class.hash ^ name.hash ^ email.hash
     end
@@ -21,7 +21,7 @@ module GoApiClient
     def to_s
       "#{name} <#{email}>"
     end
-    
+
     def inspect
       "User(#{to_s})"
     end

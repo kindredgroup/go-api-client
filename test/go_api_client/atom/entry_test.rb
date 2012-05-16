@@ -8,7 +8,7 @@ module GoApiClient
         @root = doc.root
         @entry_node = @root.xpath('./xmlns:entry')[12]
       end
-      
+
       test "should parse entry node" do
         entry = Entry.new(@entry_node).parse!
         assert_equal 'https://go-server.example.com/go/pipelines/tlb/177/ant_count_go/1', entry.id
