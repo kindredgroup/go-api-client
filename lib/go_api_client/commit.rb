@@ -15,6 +15,7 @@ module GoApiClient
       @message  = @root.xpath("./message").first.content
       @time     = Time.parse(@root.xpath("./checkinTime").first.content).utc
       @user     = User.parse(@root.xpath("./user").first.content)
+      @root     = nil
       self
     end
 

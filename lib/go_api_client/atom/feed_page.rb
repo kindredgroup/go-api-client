@@ -18,6 +18,7 @@ module GoApiClient
         self.entries    = @root.xpath("xmlns:entry").collect do |entry|
           Entry.new(entry).parse!
         end
+        @root = nil
         self
       end
 

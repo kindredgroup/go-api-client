@@ -11,6 +11,7 @@ module GoApiClient
 
     def parse!
       self.artifacts_uri = @root.xpath("./artifacts").first.attributes["baseUri"].value
+      @root = nil
       self
     end
 
