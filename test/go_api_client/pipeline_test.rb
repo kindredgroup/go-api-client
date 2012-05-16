@@ -12,6 +12,7 @@ module GoApiClient
       pipeline = GoApiClient::Pipeline.from(link)
 
       assert_equal "1", pipeline.label
+      assert_equal "defaultPipeline", pipeline.name
       assert_equal ["Update README", "Fixed build"], pipeline.commits.collect(&:message)
     end
 

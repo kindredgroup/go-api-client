@@ -1,6 +1,6 @@
 module GoApiClient
   class Pipeline
-    attr_accessor :url, :id, :commits, :label, :authors, :stages
+    attr_accessor :url, :id, :commits, :label, :authors, :stages, :name
 
     include GoApiClient::Helpers::SimpleAttributesSupport
 
@@ -21,6 +21,7 @@ module GoApiClient
     end
 
     def parse!
+      self.name     = @root.attributes["name"].value
       self.label    = @root.attributes["label"].value
       self.id       = @root.xpath("./id").first.content
       self.commits  = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
