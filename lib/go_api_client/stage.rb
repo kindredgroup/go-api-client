@@ -11,13 +11,14 @@ module GoApiClient
 
     def fetch
       doc = Nokogiri::XML(open(self.stage_link))
-      @name = doc.root.xpath("@name").first.value
-      @result = doc.root.xpath("//result").first.content
-      @completed_at = Time.parse(doc.root.xpath("//updated").first.content).utc
-      job_detail_links = doc.root.xpath("//job").collect{|job| job.attributes["href"].value}
+      root = doc.root
+      @name = root.xpath("@name").first.value
+      @result = root.xpath("./result").first.content
+      @completed_at = Time.parse(root.xpath("./updated").first.content).utc
+      job_detail_links = root.xpath("./jobs/job").collect{|job| job.attributes["href"].value}
       @jobs = Job.build(self, job_detail_links)
 
-      pipeline_link = doc.root.xpath("//pipeline").first.attributes["href"].value
+      pipeline_link = root.xpath("./pipeline").first.attributes["href"].value
 
       pipeline = @pipelines[pipeline_link] || Pipeline.new(pipeline_link).fetch
       pipeline.stages << self

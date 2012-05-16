@@ -32,7 +32,7 @@ module GoApiClient
       end
       assert_equal "Acceptance", stages.first.name
       assert_equal "Units", stages.last.name
-      assert_equal ["Update README"], pipelines.first.commit_messages
+      assert_equal ["Update README", "Fixed build"], pipelines.first.commits.collect(&:message)
 
       assert_equal "http://localhost:8153/go/files/defaultPipeline/1/Acceptance/1/Test/cruise-output/console.log", stages.first.jobs.first.console_log_url
       assert_equal "http://localhost:8153/go/files/defaultPipeline/1/Units/1/Test/cruise-output/console.log", stages.last.jobs.first.console_log_url

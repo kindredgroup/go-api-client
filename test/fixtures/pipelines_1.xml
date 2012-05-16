@@ -14,6 +14,13 @@
           <message><![CDATA[Update README]]></message>
           <file name="README" action="modified"/>
         </changeset>
+        <changeset changesetUri="http://localhost:8153/go/api/materials/1/changeset/ded20c6210172daee9c100364679e65bded20c6210172daee9c10036467.xml">
+          <user><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></user>
+          <checkinTime>2012-02-23T15:42:10+05:30</checkinTime>
+          <revision><![CDATA[ded20c6210172daee9c100364679e65bded20c6210172daee9c10036467]]></revision>
+          <message><![CDATA[Fixed build]]></message>
+          <file name="Rakefile" action="modified"/>
+        </changeset>
       </modifications>
     </material>
   </materials>

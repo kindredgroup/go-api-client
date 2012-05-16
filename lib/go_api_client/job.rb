@@ -5,8 +5,9 @@ module GoApiClient
     def self.build(stage, links)
       @stage = stage
       links.collect do |link|
-        job = Nokogiri::XML(open(link))
-        self.new(job.xpath("//artifacts").first.attributes["baseUri"].value)
+        doc = Nokogiri::XML(open(link))
+        root = doc.root
+        self.new(root.xpath("./artifacts").first.attributes["baseUri"].value)
       end
     end
 

@@ -13,7 +13,7 @@ module GoApiClient
       pipeline.fetch
 
       assert_equal "1", pipeline.label
-      assert_equal ["Update README"], pipeline.commit_messages
+      assert_equal ["Update README", "Fixed build"], pipeline.commits.collect(&:message)
     end
 
     test "should return a list of authors from the first stage" do

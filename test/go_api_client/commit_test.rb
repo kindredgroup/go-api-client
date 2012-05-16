@@ -4,16 +4,29 @@ module GoApiClient
   class CommitTest < Test::Unit::TestCase
     
     test "should parse a changeset xml node" do
-      root = Nokogiri::XML.parse %q{<changeset changesetUri="http://localhost:8153/go/api/materials/1/changeset/9f77888d7a594699894a17f4d61fc9dfac3cfb74.xml">
+      doc = Nokogiri::XML.parse %q{<changeset changesetUri="http://localhost:8153/go/api/materials/1/changeset/9f77888d7a594699894a17f4d61fc9dfac3cfb74.xml">
+        <bar>
+          <revision>jhgasdfjkhgads</revision>
+          <message>some message</message>
+          <checkinTime>unparsable cruft</checkinTime>
+          <user>unparsable cruft</user>
+        </bar>
+
         <user><![CDATA[oogabooga <twgosaas@gmail.com>]]></user>
         <checkinTime>2012-02-21T15:41:30+05:30</checkinTime>
         <revision><![CDATA[9f77888d7a594699894a17f4d61fc9dfac3cfb74]]></revision>
         <message><![CDATA[Update README]]></message>
         <file name="README" action="modified"/>
+        <foo>
+          <revision>jhgasdfjkhgads</revision>
+          <message>some message</message>
+          <checkinTime>unparsable cruft</checkinTime>
+          <user>unparsable cruft</user>
+        </foo>
       </changeset>
       }
       
-      commit = Commit.new(root).parse!
+      commit = Commit.new(doc.root).parse!
 
       assert_equal '9f77888d7a594699894a17f4d61fc9dfac3cfb74', commit.revision
       assert_equal 'Update README', commit.message
