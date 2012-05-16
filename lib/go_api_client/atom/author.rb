@@ -37,10 +37,6 @@ module GoApiClient
         self.class.hash ^ name.hash ^ email.hash ^ uri.hash
       end
 
-      def to_s
-        "GoApiClient::Atom::Author(#{to_s})"
-      end
-
     end
   end
 end

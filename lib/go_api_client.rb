@@ -19,7 +19,7 @@ module GoApiClient
     feed = GoApiClient::Atom::FeedPage.new(doc.root).parse!
     pipelines = {}
     feed.entries.each do |entry|
-      Stage.new(entry, pipelines).fetch
+      Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines)
     end
     pipelines.values
   end

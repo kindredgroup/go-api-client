@@ -2,19 +2,31 @@ module GoApiClient
   class Pipeline
     attr_accessor :url, :id, :commits, :label, :authors, :stages
 
-    def initialize(url)
-      @url = url
-      @stages = []
+    include GoApiClient::Helpers::SimpleAttributesSupport
+
+    def initialize(root, attributes={})
+      @root = root
+      super(attributes)
     end
 
-    # FIXME: remove this
-    def fetch
-      doc = Nokogiri::XML(open(self.url))
-      @label = doc.root.attributes["label"].value
-      @id = doc.root.xpath("./id").first.content
-      @commits = doc.root.xpath("./materials/material/modifications/changeset").collect do |changeset|
+    class << self
+      def from(url)
+        doc = Nokogiri::XML(open(url))
+        self.new(doc.root).parse!
+      end
+    end
+
+    def stages
+      @stages ||= []
+    end
+
+    def parse!
+      @label = @root.attributes["label"].value
+      @id = @root.xpath("./id").first.content
+      @commits = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
         Commit.new(changeset).parse!
       end
+      @root = nil
       self
     end
 

@@ -9,8 +9,7 @@ module GoApiClient
 
     test "should fetch the pipeline xml and populate itself" do
       link = "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml"
-      pipeline = GoApiClient::Pipeline.new(link)
-      pipeline.fetch
+      pipeline = GoApiClient::Pipeline.from(link)
 
       assert_equal "1", pipeline.label
       assert_equal ["Update README", "Fixed build"], pipeline.commits.collect(&:message)
@@ -18,7 +17,7 @@ module GoApiClient
 
     test "should return a list of authors from the first stage" do
       link = "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml"
-      pipeline = GoApiClient::Pipeline.new(link).fetch
+      pipeline = GoApiClient::Pipeline.from(link)
       author_foo = Atom::Author.new(nil, :name => 'foo', :email => 'foo@example.com', :uri => 'http://foo.example.com')
       author_bar = Atom::Author.new(nil, :name => 'bar', :email => 'bar@example.com', :uri => 'http://bar.example.com')
 
