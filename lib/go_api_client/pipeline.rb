@@ -23,6 +23,7 @@ module GoApiClient
     def parse!
       self.name     = @root.attributes["name"].value
       self.label    = @root.attributes["label"].value
+      self.url      = href_from(@root.xpath("./link[@rel='self']"))
       self.id       = @root.xpath("./id").first.content
       self.commits  = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
                         Commit.new(changeset).parse!
@@ -33,6 +34,11 @@ module GoApiClient
 
     def authors
       @authors ||= stages.first.authors
+    end
+
+    private
+    def href_from(xml)
+      xml.first.attribute('href').value unless xml.empty?
     end
 
   end

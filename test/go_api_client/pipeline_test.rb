@@ -13,6 +13,7 @@ module GoApiClient
 
       assert_equal "1", pipeline.label
       assert_equal "defaultPipeline", pipeline.name
+      assert_equal "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml", pipeline.url
       assert_equal ["Update README", "Fixed build"], pipeline.commits.collect(&:message)
     end
 

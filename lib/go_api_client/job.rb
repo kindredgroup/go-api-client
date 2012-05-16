@@ -1,6 +1,6 @@
 module GoApiClient
   class Job
-    attr_accessor :artifacts_uri, :console_log_url
+    attr_accessor :artifacts_uri, :console_log_url, :url
 
     include GoApiClient::Helpers::SimpleAttributesSupport
 
@@ -18,6 +18,8 @@ module GoApiClient
 
     def parse!
       self.artifacts_uri = @root.xpath("./artifacts").first.attributes["baseUri"].value
+      self.url           = href_from(@root.xpath("./link[@rel='self']"))
+
       @root = nil
       self
     end
@@ -26,5 +28,9 @@ module GoApiClient
       @console_log_url ||= "#{artifacts_uri}/cruise-output/console.log"
     end
 
+    private
+    def href_from(xml)
+      xml.first.attribute('href').value unless xml.empty?
+    end
   end
 end
