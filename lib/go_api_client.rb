@@ -11,9 +11,9 @@ require 'go_api_client/commit'
 require 'go_api_client/user'
 
 module GoApiClient
-  def self.runs(host, port="8153")
+  def self.runs(host, port="8153", stop_at=nil)
     doc = Nokogiri::XML(open("http://#{host}:#{port}/go/api/pipelines/defaultPipeline/stages.xml"))
-    feed = GoApiClient::Atom::Feed.new(doc.root).parse!
+    feed = GoApiClient::Atom::FeedPage.new(doc.root).parse!
     pipelines = {}
     feed.entries.each do |entry|
       Stage.new(entry, pipelines).fetch

@@ -1,0 +1,615 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:go="http://www.thoughtworks-studios.com/ns/go">
+    <title><![CDATA[tlb]]></title>
+    <id>https://go-server.example.com/go/api/pipelines/tlb/stages.xml</id>
+    <author>
+        <name>Go</name>
+    </author>
+    <updated>2011-12-27T18:29:06-08:00</updated>
+    <link rel="self" href="https://go-server.example.com/go/api/pipelines/tlb/stages.xml"/>
+
+    
+        <!-- <link rel="next" href="https://go-server.example.com/go/api/pipelines/tlb/stages.xml?before=7819016"/> -->
+    
+
+    
+        <entry>
+            <title><![CDATA[tlb(171) stage ant_count_go(1) Passed]]></title>
+            <updated>2011-12-27T18:29:06-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/171/ant_count_go/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_count_go Stage Detail" href="https://go-server.example.com/go/api/stages/207014.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_count_go Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/171/ant_count_go/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95652.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/171/ant_count_go/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(171) stage ant_smoothed_time_tlb(1) Passed]]></title>
+            <updated>2011-12-27T18:24:49-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/171/ant_smoothed_time_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_smoothed_time_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/207013.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_smoothed_time_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/171/ant_smoothed_time_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95652.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/171/ant_smoothed_time_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(171) stage ant_time_tlb(1) Passed]]></title>
+            <updated>2011-12-27T18:20:50-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/171/ant_time_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_time_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/207012.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_time_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/171/ant_time_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95652.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/171/ant_time_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(171) stage ant_count_tlb(1) Passed]]></title>
+            <updated>2011-12-27T18:17:00-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/171/ant_count_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_count_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/207010.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_count_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/171/ant_count_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95652.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/171/ant_count_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(171) stage main(1) Passed]]></title>
+            <updated>2011-12-27T18:13:47-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/171/main/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="main Stage Detail" href="https://go-server.example.com/go/api/stages/207008.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="main Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/171/main/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95652.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/171/main/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(170) stage perf(1) Failed]]></title>
+            <updated>2011-12-23T18:39:50-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/170/perf/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="perf Stage Detail" href="https://go-server.example.com/go/api/stages/206687.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="perf Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/170/perf/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95538.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/170/perf/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="failed" label="Failed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(170) stage ant_time_go(1) Passed]]></title>
+            <updated>2011-12-23T18:38:44-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/170/ant_time_go/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_time_go Stage Detail" href="https://go-server.example.com/go/api/stages/206686.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_time_go Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_time_go/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95538.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_time_go/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(170) stage ant_count_go(1) Passed]]></title>
+            <updated>2011-12-23T18:33:22-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/170/ant_count_go/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_count_go Stage Detail" href="https://go-server.example.com/go/api/stages/206685.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_count_go Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_count_go/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95538.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_count_go/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(170) stage ant_smoothed_time_tlb(1) Passed]]></title>
+            <updated>2011-12-23T18:29:15-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/170/ant_smoothed_time_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_smoothed_time_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/206684.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_smoothed_time_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_smoothed_time_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95538.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_smoothed_time_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(170) stage ant_time_tlb(1) Passed]]></title>
+            <updated>2011-12-23T18:24:56-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/170/ant_time_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_time_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/206683.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_time_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_time_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95538.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_time_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(170) stage ant_count_tlb(1) Passed]]></title>
+            <updated>2011-12-23T18:20:49-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/170/ant_count_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_count_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/206682.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_count_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_count_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95538.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/170/ant_count_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(170) stage main(1) Passed]]></title>
+            <updated>2011-12-23T18:17:07-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/170/main/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="main Stage Detail" href="https://go-server.example.com/go/api/stages/206681.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="main Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/170/main/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95538.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/170/main/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(169) stage ant_time_tlb(1) Failed]]></title>
+            <updated>2011-12-22T18:28:48-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/169/ant_time_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_time_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/206552.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_time_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/169/ant_time_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95479.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/169/ant_time_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="failed" label="Failed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(169) stage ant_count_tlb(1) Passed]]></title>
+            <updated>2011-12-22T18:04:38-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/169/ant_count_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_count_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/206551.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_count_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/169/ant_count_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95479.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/169/ant_count_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(169) stage main(1) Passed]]></title>
+            <updated>2011-12-22T18:01:10-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/169/main/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="main Stage Detail" href="https://go-server.example.com/go/api/stages/206550.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="main Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/169/main/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95479.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/169/main/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(168) stage perf(1) Cancelled]]></title>
+            <updated>2011-12-21T17:55:27-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/168/perf/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="perf Stage Detail" href="https://go-server.example.com/go/api/stages/206302.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="perf Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/168/perf/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95331.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/168/perf/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="cancelled" label="Cancelled" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(168) stage ant_time_go(1) Passed]]></title>
+            <updated>2011-12-21T17:24:32-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/168/ant_time_go/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_time_go Stage Detail" href="https://go-server.example.com/go/api/stages/206300.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_time_go Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_time_go/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95331.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_time_go/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(168) stage ant_count_go(1) Passed]]></title>
+            <updated>2011-12-21T17:13:55-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/168/ant_count_go/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_count_go Stage Detail" href="https://go-server.example.com/go/api/stages/206298.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_count_go Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_count_go/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95331.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_count_go/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(168) stage ant_smoothed_time_tlb(1) Passed]]></title>
+            <updated>2011-12-21T17:10:04-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/168/ant_smoothed_time_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_smoothed_time_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/206296.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_smoothed_time_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_smoothed_time_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95331.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_smoothed_time_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(168) stage ant_time_tlb(1) Passed]]></title>
+            <updated>2011-12-21T17:06:28-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/168/ant_time_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_time_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/206288.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_time_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_time_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95331.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_time_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(168) stage ant_count_tlb(1) Passed]]></title>
+            <updated>2011-12-21T17:02:05-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/168/ant_count_tlb/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_count_tlb Stage Detail" href="https://go-server.example.com/go/api/stages/206282.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_count_tlb Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_count_tlb/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95331.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/168/ant_count_tlb/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(168) stage main(1) Passed]]></title>
+            <updated>2011-12-21T16:57:59-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/168/main/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="main Stage Detail" href="https://go-server.example.com/go/api/stages/206280.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="main Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/168/main/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/95331.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/168/main/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(167) stage perf(1) Cancelled]]></title>
+            <updated>2011-12-10T20:27:20-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/167/perf/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="perf Stage Detail" href="https://go-server.example.com/go/api/stages/204828.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="perf Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/167/perf/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/94769.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/167/perf/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="cancelled" label="Cancelled" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(167) stage ant_time_go(1) Passed]]></title>
+            <updated>2011-12-10T19:56:34-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/167/ant_time_go/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_time_go Stage Detail" href="https://go-server.example.com/go/api/stages/204827.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_time_go Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/167/ant_time_go/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/94769.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/167/ant_time_go/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[tlb(167) stage ant_count_go(1) Passed]]></title>
+            <updated>2011-12-10T19:46:59-08:00</updated>
+            <id>https://go-server.example.com/go/pipelines/tlb/167/ant_count_go/1</id>
+
+
+            <author>
+                <name><![CDATA[Janmejay Singh <singh.janmejay@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="ant_count_go Stage Detail" href="https://go-server.example.com/go/api/stages/204826.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="ant_count_go Stage Detail" href="https://go-server.example.com/go/pipelines/tlb/167/ant_count_go/1" rel="alternate" type="text/html"/>
+            
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/api/pipelines/tlb/94769.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="tlb Pipeline Detail" href="https://go-server.example.com/go/pipelines/tlb/167/ant_count_go/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+</feed>
