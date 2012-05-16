@@ -18,18 +18,19 @@ module GoApiClient
     end
 
     def parse!
-      @name = @root.xpath("@name").first.value
-      @url  = href_from(@root.xpath("./link[@rel='self']"))
-      @result = @root.xpath("./result").first.content
-      @completed_at = Time.parse(@root.xpath("./updated").first.content).utc
-      @jobs = @root.xpath("./jobs/job").collect{|job_element| Job.from(job_element.attributes["href"].value)}
+      self.name         = @root.xpath("@name").first.value
+      self.url          = href_from(@root.xpath("./link[@rel='self']"))
+      self.result       = @root.xpath("./result").first.content
+      self.completed_at = Time.parse(@root.xpath("./updated").first.content).utc
+      self.jobs         = @root.xpath("./jobs/job").collect{|job_element| Job.from(job_element.attributes["href"].value)}
 
-      pipeline_link = @root.xpath("./pipeline").first.attributes["href"].value
+      pipeline_link     = @root.xpath("./pipeline").first.attributes["href"].value
 
       pipeline = @pipeline_cache[pipeline_link] || Pipeline.from(pipeline_link)
       pipeline.stages << self
 
-      @pipeline_cache[pipeline_link] ||= pipeline
+      self.pipeline_cache[pipeline_link] ||= pipeline
+      @root = nil
       self
     end
 

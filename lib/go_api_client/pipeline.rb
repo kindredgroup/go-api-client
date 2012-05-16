@@ -21,11 +21,11 @@ module GoApiClient
     end
 
     def parse!
-      @label = @root.attributes["label"].value
-      @id = @root.xpath("./id").first.content
-      @commits = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
-        Commit.new(changeset).parse!
-      end
+      self.label    = @root.attributes["label"].value
+      self.id       = @root.xpath("./id").first.content
+      self.commits  = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
+                        Commit.new(changeset).parse!
+                      end
       @root = nil
       self
     end
