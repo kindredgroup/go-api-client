@@ -14,10 +14,11 @@ require 'go_api_client/user'
 
 
 module GoApiClient
-  def self.runs(host, port="8153", stop_at=nil)
-    feed_url = "http://#{host}:#{port}/go/api/pipelines/defaultPipeline/stages.xml"
+  def self.runs(options)
+    options = ({:protocol => 'http', :port => 8153, :username => nil, :password => nil, :stop_at => nil}).merge(options)
 
-    feed = GoApiClient::Atom::Feed.new(feed_url, stop_at)
+    feed_url = "http://#{options[:host]}:#{options[:port]}/go/api/pipelines/defaultPipeline/stages.xml"
+    feed = GoApiClient::Atom::Feed.new(feed_url, options[:stop_at])
     feed.fetch!
 
     pipelines = {}

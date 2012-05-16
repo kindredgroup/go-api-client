@@ -13,7 +13,7 @@ module GoApiClient
 
     test "should parse stage" do
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages.xml"))
-      pipelines = GoApiClient.runs("localhost", 8153)
+      pipelines = GoApiClient.runs(:host => "localhost", :port => 8153)
       stages = pipelines.first.stages
 
       assert_equal 1, pipelines.count
@@ -40,7 +40,7 @@ module GoApiClient
 
     test "empty atom feed should not throw up" do
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages_empty.xml"))
-      pipelines = GoApiClient.runs('localhost', 8153)
+      pipelines = GoApiClient.runs(:host => "localhost", :port => 8153)
 
       assert pipelines.empty?
     end
