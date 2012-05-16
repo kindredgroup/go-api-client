@@ -22,8 +22,7 @@ module GoApiClient
       @url  = href_from(@root.xpath("./link[@rel='self']"))
       @result = @root.xpath("./result").first.content
       @completed_at = Time.parse(@root.xpath("./updated").first.content).utc
-      job_urls = @root.xpath("./jobs/job").collect{|job| job.attributes["href"].value}
-      @jobs = Job.build(self, job_urls)
+      @jobs = @root.xpath("./jobs/job").collect{|job_element| Job.from(job_element.attributes["href"].value)}
 
       pipeline_link = @root.xpath("./pipeline").first.attributes["href"].value
 

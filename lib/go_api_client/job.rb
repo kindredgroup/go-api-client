@@ -9,6 +9,13 @@ module GoApiClient
       super(attributes)
     end
 
+    class << self
+      def from(url)
+        doc = Nokogiri::XML(open(url))
+        self.new(doc.root).parse!
+      end
+    end
+
     def parse!
       self.artifacts_uri = @root.xpath("./artifacts").first.attributes["baseUri"].value
       @root = nil
@@ -19,15 +26,5 @@ module GoApiClient
       @console_log_url ||= "#{artifacts_uri}/cruise-output/console.log"
     end
 
-    class << self
-      def build(stage, links)
-        @stage = stage
-        links.collect do |link|
-          doc = Nokogiri::XML(open(link))
-          root = doc.root
-          self.new(root).parse!
-        end
-      end
-    end
   end
 end
