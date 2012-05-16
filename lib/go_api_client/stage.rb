@@ -1,16 +1,16 @@
 require 'time'
 module GoApiClient
   class Stage
-    attr_accessor :authors, :stage_link, :name, :result, :jobs, :pipeline, :completed_at
+    attr_accessor :authors, :url, :name, :result, :jobs, :pipeline, :completed_at
 
     def initialize(entry, pipelines)
       @authors = entry.authors
-      @stage_link = entry.stage_href
+      @url = entry.stage_href
       @pipelines = pipelines
     end
 
     def fetch
-      doc = Nokogiri::XML(open(self.stage_link))
+      doc = Nokogiri::XML(open(self.url))
       root = doc.root
       @name = root.xpath("@name").first.value
       @result = root.xpath("./result").first.content
