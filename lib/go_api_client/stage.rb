@@ -9,6 +9,7 @@ module GoApiClient
       @pipelines = pipelines
     end
 
+    # FIXME: remove this
     def fetch
       doc = Nokogiri::XML(open(self.url))
       root = doc.root

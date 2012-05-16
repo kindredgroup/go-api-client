@@ -4,8 +4,11 @@ module GoApiClient
     class FeedPage
       attr_accessor :updated_at, :next_page, :url, :entries
 
-      def initialize(root)
+      include GoApiClient::Helpers::SimpleAttributesSupport
+
+      def initialize(root, attributes={})
         @root = root
+        super(attributes)
       end
 
       def parse!

@@ -7,6 +7,7 @@ module GoApiClient
       @stages = []
     end
 
+    # FIXME: remove this
     def fetch
       doc = Nokogiri::XML(open(self.url))
       @label = doc.root.attributes["label"].value

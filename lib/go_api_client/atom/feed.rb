@@ -3,7 +3,7 @@ module GoApiClient
     class Feed
       attr_accessor :feed_pages, :entries
 
-      def initialize (atom_feed_url, last_entry_id=nil)
+      def initialize(atom_feed_url, last_entry_id=nil)
         @atom_feed_url = atom_feed_url
         @last_entry_id = last_entry_id
       end

@@ -3,10 +3,14 @@ require 'time'
 module GoApiClient
   module Atom
     class Entry
+
       attr_accessor :authors, :id, :updated_at, :title, :stage_href, :pipelines
 
-      def initialize(root)
+      include GoApiClient::Helpers::SimpleAttributesSupport
+
+      def initialize(root, attributes={})
         @root = root
+        super(attributes)
       end
 
       def parse!

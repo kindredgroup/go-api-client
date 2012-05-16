@@ -1,12 +1,14 @@
 module GoApiClient
   module Atom
     class Author
+
       attr_accessor :name, :email, :uri
+
+      include GoApiClient::Helpers::SimpleAttributesSupport
+
       def initialize(root, attributes={})
         @root = root
-        @name = attributes[:name]
-        @email = attributes[:email]
-        @uri = attributes[:uri]
+        super(attributes)
       end
 
       def parse!

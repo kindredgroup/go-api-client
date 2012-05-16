@@ -3,8 +3,11 @@ module GoApiClient
 
     attr_accessor :revision, :message, :time, :user
 
-    def initialize(root)
+    include GoApiClient::Helpers::SimpleAttributesSupport
+
+    def initialize(root, attributes={})
       @root = root
+      super(attributes)
     end
     
     def parse!
