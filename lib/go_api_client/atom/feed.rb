@@ -23,6 +23,7 @@ module GoApiClient
                           end
           feed_url = feed_page.next_page
         end while feed_page.next_page && !feed_page.contains_entry?(@last_entry_id)
+        self
       end
     end
   end
