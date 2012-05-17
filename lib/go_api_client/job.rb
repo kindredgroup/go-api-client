@@ -1,6 +1,6 @@
 module GoApiClient
   class Job
-    attr_accessor :artifacts_uri, :console_log_url, :url
+    attr_accessor :artifacts_uri, :console_log_url, :url, :http_fetcher
 
     include GoApiClient::Helpers::SimpleAttributesSupport
 
@@ -10,9 +10,9 @@ module GoApiClient
     end
 
     class << self
-      def from(url, attributes={})
+      def from(url, attributes = {})
         attributes[:http_fetcher] ||= GoApiClient::HttpFetcher.new
-        doc = Nokogiri::XML(attributes.delete(:http_fetcher).get_response_body(url))
+        doc = Nokogiri::XML(attributes[:http_fetcher].get_response_body(url))
         self.new(doc.root, attributes).parse!
       end
     end

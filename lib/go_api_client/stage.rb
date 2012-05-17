@@ -1,7 +1,7 @@
 require 'time'
 module GoApiClient
   class Stage
-    attr_accessor :authors, :url, :name, :result, :jobs, :pipeline, :completed_at, :pipeline_cache
+    attr_accessor :authors, :url, :name, :result, :jobs, :pipeline, :completed_at, :pipeline_cache, :http_fetcher
 
     include GoApiClient::Helpers::SimpleAttributesSupport
 
@@ -13,7 +13,7 @@ module GoApiClient
     class << self
       def from(url, attributes = {})
         attributes[:http_fetcher] ||= GoApiClient::HttpFetcher.new
-        doc = Nokogiri::XML(attributes.delete(:http_fetcher).get_response_body(url))
+        doc = Nokogiri::XML(attributes[:http_fetcher].get_response_body(url))
         self.new(doc.root, attributes).parse!
       end
     end
@@ -24,12 +24,12 @@ module GoApiClient
       self.result       = @root.xpath("./result").first.content
       self.completed_at = Time.parse(@root.xpath("./updated").first.content).utc
       self.jobs         = @root.xpath("./jobs/job").collect do |job_element|
-                            Job.from(job_element.attributes["href"].value)
+                            Job.from(job_element.attributes["href"].value, :http_fetcher => http_fetcher)
                           end
 
       pipeline_link     = @root.xpath("./pipeline").first.attributes["href"].value
 
-      pipeline = @pipeline_cache[pipeline_link] || Pipeline.from(pipeline_link)
+      pipeline = @pipeline_cache[pipeline_link] || Pipeline.from(pipeline_link, :http_fetcher => http_fetcher)
       pipeline.stages << self
 
       self.pipeline_cache[pipeline_link] ||= pipeline
