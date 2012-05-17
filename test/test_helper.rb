@@ -11,7 +11,6 @@ Bundler.require
 require 'test/unit'
 require 'go_api_client'
 require 'ostruct'
-# Dir["go_api_client/**/*.rb"].each {|f| require f}
 require 'webmock/test_unit'
 
 class Test::Unit::TestCase
