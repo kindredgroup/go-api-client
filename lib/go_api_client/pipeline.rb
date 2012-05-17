@@ -11,7 +11,8 @@ module GoApiClient
 
     class << self
       def from(url, attributes={})
-        doc = Nokogiri::XML(open(url))
+        attributes[:http_fetcher] ||= GoApiClient::HttpFetcher.new
+        doc = Nokogiri::XML(attributes.delete(:http_fetcher).get_response_body(url))
         self.new(doc.root, attributes).parse!
       end
     end

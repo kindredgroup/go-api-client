@@ -1,9 +1,10 @@
 require 'nokogiri'
-require 'open-uri'
+
 require 'net/http'
 
 require 'go_api_client/version'
 require 'go_api_client/helpers'
+require 'go_api_client/http_fetcher'
 
 require 'go_api_client/atom'
 require 'go_api_client/pipeline'
@@ -17,13 +18,15 @@ module GoApiClient
   def self.runs(options)
     options = ({:protocol => 'http', :port => 8153, :username => nil, :password => nil, :stop_at => nil}).merge(options)
 
+    http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
+
     feed_url = "http://#{options[:host]}:#{options[:port]}/go/api/pipelines/defaultPipeline/stages.xml"
     feed = GoApiClient::Atom::Feed.new(feed_url, options[:stop_at])
-    feed.fetch!
+    feed.fetch!(http_fetcher)
 
     pipelines = {}
     feed.entries.each do |entry|
-      Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines)
+      Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines, :http_fetcher => http_fetcher)
     end
     pipelines.values
 

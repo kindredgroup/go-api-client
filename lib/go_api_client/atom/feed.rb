@@ -8,12 +8,12 @@ module GoApiClient
         @last_entry_id = last_entry_id
       end
 
-      def fetch!
+      def fetch!(http_fetcher = HttpFetcher.new)
         self.entries = []
         feed_url = @atom_feed_url
 
         begin
-          doc = Nokogiri::XML(open(feed_url))
+          doc = Nokogiri::XML(http_fetcher.get_response_body(feed_url))
           feed_page = GoApiClient::Atom::FeedPage.new(doc.root).parse!
 
           self.entries += if feed_page.contains_entry?(@last_entry_id)
