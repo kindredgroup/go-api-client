@@ -10,9 +10,9 @@ module GoApiClient
     end
 
     class << self
-      def from(url)
+      def from(url, attributes={})
         doc = Nokogiri::XML(open(url))
-        self.new(doc.root).parse!
+        self.new(doc.root, attributes).parse!
       end
     end
 
