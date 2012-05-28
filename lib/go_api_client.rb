@@ -25,11 +25,10 @@ module GoApiClient
     feed.fetch!(http_fetcher)
 
     pipelines = {}
-    feed.entries.each do |entry|
+    stages = feed.entries.collect do |entry|
       Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines, :http_fetcher => http_fetcher)
     end
-    pipelines.values
-
+    {:pipelines => pipelines.values, :last_stage => stages.first}
   end
 
   def self.schedule_pipeline(host)

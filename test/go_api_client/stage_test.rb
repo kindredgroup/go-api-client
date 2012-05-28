@@ -11,7 +11,9 @@ module GoApiClient
       stub_request(:get, "http://localhost:8153/go/api/jobs/2.xml").to_return(:body => file_contents("jobs_2.xml"))
       
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages.xml"))
-      pipelines = GoApiClient.runs(:host => "localhost", :port => 8153)
+      runs = GoApiClient.runs(:host => "localhost", :port => 8153)
+      pipelines = runs[:pipelines]
+      assert_equal "http://localhost:8153/go/api/stages/2.xml", runs[:last_stage].url
       stages = pipelines.first.stages
 
       assert_equal 1, pipelines.count
@@ -41,9 +43,9 @@ module GoApiClient
 
     test "empty atom feed should not throw up" do
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages_empty.xml"))
-      pipelines = GoApiClient.runs(:host => "localhost", :port => 8153)
+      runs = GoApiClient.runs(:host => "localhost", :port => 8153)
 
-      assert pipelines.empty?
+      assert runs[:pipelines].empty?
     end
   end
 end
