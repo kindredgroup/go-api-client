@@ -1,7 +1,7 @@
 require 'time'
 module GoApiClient
   class Stage
-    attr_accessor :authors, :url, :name, :result, :jobs, :pipeline, :completed_at, :pipeline_cache, :http_fetcher
+    attr_accessor :authors, :url, :name, :result, :jobs, :pipeline, :completed_at, :pipeline_cache, :http_fetcher, :counter
 
     include GoApiClient::Helpers::SimpleAttributesSupport
 
@@ -19,7 +19,8 @@ module GoApiClient
     end
 
     def parse!
-      self.name         = @root.xpath("@name").first.value
+      self.name         = @root.attributes['name'].value
+      self.counter      = @root.attributes['counter'].value.to_i
       self.url          = href_from(@root.xpath("./link[@rel='self']"))
       self.result       = @root.xpath("./result").first.content
       self.completed_at = Time.parse(@root.xpath("./updated").first.content).utc

@@ -20,6 +20,9 @@ module GoApiClient
       assert_equal "http://localhost:8153/go/api/stages/2.xml", stages.first.url
       assert_equal "http://localhost:8153/go/api/stages/1.xml", stages.last.url
 
+      assert_equal 1, stages.first.counter
+      assert_equal 1, stages.last.counter
+
       assert_equal [Time.parse("2012-02-23T17:19:31+05:30").utc, Time.parse("2012-02-23T17:16:41+05:30").utc], stages.collect(&:completed_at)
 
       assert_equal [Atom::Author.new(nil, :name => 'oogabooga', :email => 'twgosaas@gmail.com')], pipelines.first.authors
