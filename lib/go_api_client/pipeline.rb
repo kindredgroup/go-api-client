@@ -28,8 +28,8 @@ module GoApiClient
       self.url      = href_from(@root.xpath("./link[@rel='self']"))
       self.id       = @root.xpath("./id").first.content
       self.commits  = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
-                        Commit.new(changeset).parse!
-                      end
+        Commit.new(changeset).parse!
+      end
       @root = nil
       self
     end

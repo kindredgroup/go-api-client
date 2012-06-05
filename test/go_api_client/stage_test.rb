@@ -32,6 +32,8 @@ module GoApiClient
       stages.each do |stage|
         assert_equal Atom::Author.new(nil, :name => 'oogabooga', :email => 'twgosaas@gmail.com'), stage.authors.first
         assert_equal "Failed", stage.result
+        assert stage.failed?
+        assert false == stage.passed?
       end
       assert_equal "Acceptance", stages.first.name
       assert_equal "Units", stages.last.name

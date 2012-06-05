@@ -1,0 +1,72 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pipeline name="defaultPipeline" counter="3" label="3">
+  <link rel="self"
+        href="http://go-server.1.project:8153/go/api/pipelines/defaultPipeline/3.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:3]]></id>
+  <link rel="insertedAfter"
+        href="http://go-server.1.project:8153/go/api/pipelines/defaultPipeline/2.xml"/>
+  <scheduleTime>2012-06-05T14:39:27Z</scheduleTime>
+  <materials>
+    <material
+        materialUri="http://go-server.1.project:8153/go/api/materials/1.xml"
+        type="GitMaterial"
+        url="git://go-saas-worker.1.project/ThoughtWorksInc/go-saas-rails"
+        branch="master">
+      <modifications>
+        <changeset
+            changesetUri="http://go-server.1.project:8153/go/api/materials/1/changeset/dc8b3df12b16770dff48cea229559cc0ea40137f.xml">
+          <user><![CDATA[Manish Chakravarty
+          <manishchaks@gmail.com>]]></user>
+          <checkinTime>2012-06-05T12:02:18Z</checkinTime>
+          <revision><![CDATA[dc8b3df12b16770dff48cea229559cc0ea40137f]]></revision>
+          <message><![CDATA[Fixed a bug with detection if a github
+          repo is already present in the
+          system.  Updated project_spec accordingly.]]></message>
+          <file name="app/models/project.rb" action="modified"/>
+          <file name="spec/models/project_spec.rb" action="modified"/>
+        </changeset>
+        <changeset
+            changesetUri="http://go-server.1.project:8153/go/api/materials/1/changeset/fc901bb18b34d42045ab21d56378fbe127437777.xml">
+          <user><![CDATA[Manish Chakravarty
+          <manishchaks@gmail.com>]]></user>
+          <checkinTime>2012-06-05T11:39:27Z</checkinTime>
+          <revision><![CDATA[fc901bb18b34d42045ab21d56378fbe127437777]]></revision>
+          <message><![CDATA[Added test to project spec to determine if
+          a github repository is already present in the
+          system. Code-cleanup of Project spec.]]></message>
+          <file name="spec/models/project_spec.rb" action="modified"/>
+        </changeset>
+        <changeset
+            changesetUri="http://go-server.1.project:8153/go/api/materials/1/changeset/9580a8f96cdc5add9ce5560a93a93ce575ddc0e5.xml">
+          <user><![CDATA[Manish Chakravarty
+          <manishchaks@gmail.com>]]></user>
+          <checkinTime>2012-06-05T11:38:04Z</checkinTime>
+          <revision><![CDATA[9580a8f96cdc5add9ce5560a93a93ce575ddc0e5]]></revision>
+          <message><![CDATA[Added a convenience method to figure out
+          if a given github repository is present as a project in our
+          system]]></message>
+          <file name="app/models/project.rb" action="modified"/>
+        </changeset>
+        <changeset
+            changesetUri="http://go-server.1.project:8153/go/api/materials/1/changeset/fe15104025eaed288eec088d8153e7b51242117d.xml">
+          <user><![CDATA[Manish Chakravarty
+          <manishchaks@gmail.com>]]></user>
+          <checkinTime>2012-06-05T10:09:51Z</checkinTime>
+          <revision><![CDATA[fe15104025eaed288eec088d8153e7b51242117d]]></revision>
+          <message><![CDATA[Refactored and cleaned up
+          DashBoardController and Project specs.]]></message>
+          <file name="spec/controllers/dashboard_controller_spec.rb"
+                action="modified"/>
+          <file name="spec/models/project_spec.rb" action="modified"/>
+        </changeset>
+      </modifications>
+    </material>
+  </materials>
+  <stages>
+    <stage
+        href="http://go-server.1.project:8153/go/api/stages/4.xml"/>
+  </stages>
+  <approvedBy><![CDATA[anonymous]]></approvedBy>
+</pipeline>

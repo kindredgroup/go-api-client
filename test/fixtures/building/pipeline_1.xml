@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pipeline name="defaultPipeline" counter="1" label="1">
+  <link rel="self"
+        href="http://go-server.1.project:8153/go/api/pipelines/defaultPipeline/1.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:1]]></id>
+  <scheduleTime>2012-06-05T08:33:09Z</scheduleTime>
+  <materials>
+    <material
+        materialUri="http://go-server.1.project:8153/go/api/materials/1.xml"
+        type="GitMaterial"
+        url="git://go-saas-worker.1.project/ThoughtWorksInc/go-saas-rails"
+        branch="master">
+      <modifications>
+        <changeset
+            changesetUri="http://go-server.1.project:8153/go/api/materials/1/changeset/a84ffc0e58b7b2ba7d5b15abae70c2d921b835e6.xml">
+          <user><![CDATA[Manish Chakravarty
+          <manishchaks@gmail.com>]]></user>
+          <checkinTime>2012-06-04T10:57:09Z</checkinTime>
+          <revision><![CDATA[a84ffc0e58b7b2ba7d5b15abae70c2d921b835e6]]></revision>
+          <message><![CDATA[Revert "Added "HubRuby" gem for talking to
+          GitHub."
+
+          This reverts commit
+          2b2e6ee3f28cf0f34241a8413c28180d8b74e14f.]]></message>
+          <file name="Gemfile" action="modified"/>
+          <file name="Gemfile.lock" action="modified"/>
+          <file name="vendor/cache/httparty-0.8.3.gem"
+                action="deleted"/>
+          <file name="vendor/cache/hubruby-0.1.1.gem"
+                action="deleted"/>
+          <file name="vendor/cache/multi_xml-0.5.1.gem"
+                action="deleted"/>
+        </changeset>
+      </modifications>
+    </material>
+  </materials>
+  <stages>
+    <stage
+        href="http://go-server.1.project:8153/go/api/stages/1.xml"/>
+    <stage
+        href="http://go-server.1.project:8153/go/api/stages/2.xml"/>
+  </stages>
+  <approvedBy><![CDATA[anonymous]]></approvedBy>
+</pipeline>

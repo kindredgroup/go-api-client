@@ -1,0 +1,40 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pipeline name="defaultPipeline" counter="2" label="2">
+  <link rel="self"
+        href="http://go-server.1.project:8153/go/api/pipelines/defaultPipeline/2.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:2]]></id>
+  <link rel="insertedAfter"
+        href="http://go-server.1.project:8153/go/api/pipelines/defaultPipeline/1.xml"/>
+  <scheduleTime>2012-06-05T10:02:10Z</scheduleTime>
+  <materials>
+    <material
+        materialUri="http://go-server.1.project:8153/go/api/materials/1.xml"
+        type="GitMaterial"
+        url="git://go-saas-worker.1.project/ThoughtWorksInc/go-saas-rails"
+        branch="master">
+      <modifications>
+        <changeset
+            changesetUri="http://go-server.1.project:8153/go/api/materials/1/changeset/f475d63c2e0f4db5c26e79541278afcb00d63cde.xml">
+          <user><![CDATA[Manish Chakravarty
+          <manishchaks@gmail.com>]]></user>
+          <checkinTime>2012-06-05T08:12:20Z</checkinTime>
+          <revision><![CDATA[f475d63c2e0f4db5c26e79541278afcb00d63cde]]></revision>
+          <message><![CDATA[Refactored code to ensure validity of
+          repository URL's. Wrote a test for
+          collaboration]]></message>
+          <file name="app/models/project.rb" action="modified"/>
+          <file name="spec/models/collaboration_spec.rb"
+                action="added"/>
+          <file name="spec/models/user_spec.rb" action="modified"/>
+        </changeset>
+      </modifications>
+    </material>
+  </materials>
+  <stages>
+    <stage
+        href="http://go-server.1.project:8153/go/api/stages/3.xml"/>
+  </stages>
+  <approvedBy><![CDATA[anonymous]]></approvedBy>
+</pipeline>

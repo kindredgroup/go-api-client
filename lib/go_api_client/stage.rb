@@ -38,6 +38,14 @@ module GoApiClient
       self
     end
 
+    def failed?
+      "Failed" == @result
+    end
+
+    def passed?
+      !failed?
+    end
+    
     private
     def href_from(xml)
       xml.first.attribute('href').value unless xml.empty?
