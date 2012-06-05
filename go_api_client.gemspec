@@ -4,7 +4,7 @@ require "go_api_client/version"
 
 Gem::Specification.new do |s|
   s.name        = "go_api_client"
-  s.version     = GoApiClient::VERSION
+  s.version     = GoApiClient::Version::VERSION
   s.authors     = ["Nikhil Mungel", "Ketan Padegaonkar", "Shishir Das"]
   s.email       = ["hyfather@gmail.com", "KetanPadegaonkar@gmail.com", "shishir.das@gmail.com"]
   s.homepage    = "https://github.com/ThoughtWorksInc/go-api-client"
@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   s.add_development_dependency "webmock"
   s.add_development_dependency "simplecov"
-  
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'test-unit'
+
   s.add_runtime_dependency "nokogiri"
 end

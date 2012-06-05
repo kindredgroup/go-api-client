@@ -1,20 +1,26 @@
+require 'time'
+
 module GoApiClient
   module Atom
     class Entry
+
       attr_accessor :authors, :id, :updated_at, :title, :stage_href, :pipelines
 
-      def initialize(root)
+      include GoApiClient::Helpers::SimpleAttributesSupport
+
+      def initialize(root, attributes={})
         @root = root
+        super(attributes)
       end
 
       def parse!
-        self.updated_at = @root.xpath('xmlns:updated').first.content
+        self.updated_at = Time.parse(@root.xpath('xmlns:updated').first.content).utc
         self.id         = @root.xpath('xmlns:id').first.content
         self.title      = @root.xpath('xmlns:title').first.content
         self.stage_href = @root.
           xpath("xmlns:link[@type='application/vnd.go+xml' and  @rel='alternate']").
           first.
-          attributes["href"]
+          attributes["href"].value
 
         self.authors    = @root.xpath('xmlns:author').collect do |author|
           Author.new(author).parse!

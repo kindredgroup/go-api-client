@@ -7,30 +7,25 @@ module GoApiClient
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml").to_return(:body => file_contents("pipelines_1.xml"))
     end
 
-    def test_fetch_populates_necessary_fields
+    test "should fetch the pipeline xml and populate itself" do
       link = "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml"
-      pipeline = GoApiClient::Pipeline.new(link)
-      pipeline.fetch
+      pipeline = GoApiClient::Pipeline.from(link)
 
       assert_equal "1", pipeline.label
-      assert_equal ["Update README"], pipeline.commit_messages
+      assert_equal 99, pipeline.counter
+      assert_equal "defaultPipeline", pipeline.name
+      assert_equal "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml", pipeline.url
+      assert_equal ["Update README", "Fixed build"], pipeline.commits.collect(&:message)
     end
 
-    def test_should_return_string_delimited_list_of_authors
+    test "should return a list of authors from the first stage" do
       link = "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml"
-      pipeline = GoApiClient::Pipeline.new(link).fetch
-      author_foo = Atom::Author.new(nil)
-      author_foo.name = 'foo'
-      author_foo.email = 'foo@example.com'
-      author_foo.uri =  'http://foo.example.com'
-
-      author_bar = Atom::Author.new(nil)
-      author_bar.name = 'bar'
-      author_bar.email = 'bar@example.com'
-      author_bar.uri =  'http://bar.example.com'
+      pipeline = GoApiClient::Pipeline.from(link)
+      author_foo = Atom::Author.new(nil, :name => 'foo', :email => 'foo@example.com', :uri => 'http://foo.example.com')
+      author_bar = Atom::Author.new(nil, :name => 'bar', :email => 'bar@example.com', :uri => 'http://bar.example.com')
 
       pipeline.stages << OpenStruct.new(:authors => [author_foo, author_bar])
-      assert_equal 'foo, bar', pipeline.authors
+      assert_equal [author_foo, author_bar], pipeline.authors
     end
 
   end

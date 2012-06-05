@@ -1,28 +1,48 @@
+require 'time'
 module GoApiClient
   class Stage
-    attr_accessor :authors, :stage_link, :name, :result, :jobs, :pipeline
+    attr_accessor :authors, :url, :name, :result, :jobs, :pipeline, :completed_at, :pipeline_cache, :http_fetcher, :counter
 
-    def initialize(entry, pipelines)
-      @authors = entry.authors
-      @stage_link = entry.stage_href
-      @pipelines = pipelines
+    include GoApiClient::Helpers::SimpleAttributesSupport
+
+    def initialize(root, attributes={})
+      @root = root
+      super(attributes)
     end
 
-    def fetch
-      doc = Nokogiri::XML(open(self.stage_link))
-      @name = doc.root.xpath("@name").first.value
-      @result = doc.root.xpath("//result").first.content
-      job_detail_links = doc.root.xpath("//job").collect{|job| job.attributes["href"]}
-      @jobs = Job.build(self, job_detail_links)
+    class << self
+      def from(url, attributes = {})
+        attributes[:http_fetcher] ||= GoApiClient::HttpFetcher.new
+        doc = Nokogiri::XML(attributes[:http_fetcher].get_response_body(url))
+        self.new(doc.root, attributes).parse!
+      end
+    end
 
-      pipeline_link = doc.root.xpath("//pipeline").first.attributes["href"].value
+    def parse!
+      self.name         = @root.attributes['name'].value
+      self.counter      = @root.attributes['counter'].value.to_i
+      self.url          = href_from(@root.xpath("./link[@rel='self']"))
+      self.result       = @root.xpath("./result").first.content
+      self.completed_at = Time.parse(@root.xpath("./updated").first.content).utc
+      self.jobs         = @root.xpath("./jobs/job").collect do |job_element|
+                            Job.from(job_element.attributes["href"].value, :http_fetcher => http_fetcher)
+                          end
 
-      pipeline = @pipelines[pipeline_link] || Pipeline.new(pipeline_link).fetch
+      pipeline_link     = @root.xpath("./pipeline").first.attributes["href"].value
+
+      pipeline = @pipeline_cache[pipeline_link] || Pipeline.from(pipeline_link, :http_fetcher => http_fetcher)
       pipeline.stages << self
 
-      @pipelines[pipeline_link] ||= pipeline
+      self.pipeline_cache[pipeline_link] ||= pipeline
+      @root = nil
       self
     end
+
+    private
+    def href_from(xml)
+      xml.first.attribute('href').value unless xml.empty?
+    end
+
   end
 end
 

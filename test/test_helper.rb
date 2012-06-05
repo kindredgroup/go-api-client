@@ -1,16 +1,33 @@
+require 'rubygems'
+require 'bundler/setup'
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_filter "/.bundle/"
+  add_filter "/bundle/"
+  add_filter "/test/"
+end
 
+Bundler.require
 require 'test/unit'
 require 'go_api_client'
 require 'ostruct'
-Dir["go_api_client/**/*.rb"].each {|f| require f}
 require 'webmock/test_unit'
 
-
-
-def file_contents(file_name)
-  File.read(File.expand_path("../../test/fixtures/#{file_name}", __FILE__))
+module WebMock
+  class RequestStub
+    attr_accessor :responses_sequences
+  end
+end
+class Test::Unit::TestCase
+  def file_contents(file_name)
+    File.read(File.expand_path("../../test/fixtures/#{file_name}", __FILE__))
+  end
+  
+  teardown do
+    WebMock::StubRegistry.instance.request_stubs.each do |stub|
+      assert_requested(stub)
+    end
+  end
 end
 
 module Test::Unit::Assertions

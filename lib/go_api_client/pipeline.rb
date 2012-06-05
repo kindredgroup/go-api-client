@@ -1,24 +1,46 @@
 module GoApiClient
   class Pipeline
-    attr_reader :details_link, :id, :commit_messages, :label
-    attr_accessor :stages
+    attr_accessor :url, :id, :commits, :label, :counter, :authors, :stages, :name, :http_fetcher
 
-    def initialize(details_link)
-      @details_link = details_link
-      @stages = []
+    include GoApiClient::Helpers::SimpleAttributesSupport
+
+    def initialize(root, attributes={})
+      @root = root
+      super(attributes)
     end
 
-    def fetch
-      doc = Nokogiri::XML(open(self.details_link))
-      @label = doc.root.attributes["label"].value
-      @id = doc.root.xpath("//id").first.content
-      @commit_messages = doc.root.xpath("//message").map(&:content)
+    class << self
+      def from(url, attributes = {})
+        attributes[:http_fetcher] ||= GoApiClient::HttpFetcher.new
+        doc = Nokogiri::XML(attributes[:http_fetcher].get_response_body(url))
+        self.new(doc.root, attributes).parse!
+      end
+    end
+
+    def stages
+      @stages ||= []
+    end
+
+    def parse!
+      self.name     = @root.attributes["name"].value
+      self.label    = @root.attributes["label"].value
+      self.counter  = @root.attributes["counter"].value.to_i
+      self.url      = href_from(@root.xpath("./link[@rel='self']"))
+      self.id       = @root.xpath("./id").first.content
+      self.commits  = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
+                        Commit.new(changeset).parse!
+                      end
+      @root = nil
       self
     end
 
     def authors
-      authors = stages.map(&:authors).flatten
-      authors.map(&:name).flatten.uniq.join(", ")
+      @authors ||= stages.first.authors
+    end
+
+    private
+    def href_from(xml)
+      xml.first.attribute('href').value unless xml.empty?
     end
 
   end

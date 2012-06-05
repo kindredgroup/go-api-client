@@ -8,7 +8,7 @@
     <link rel="self" href="http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml"/>
 
     
-        <link rel="next" href="http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml?before=6"/>
+        <!-- <link rel="next" href="http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml?before=6"/> -->
     
 
     
