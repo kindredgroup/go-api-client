@@ -19,9 +19,13 @@ module GoApiClient
     pipelines.values
   end
 
+  # GoApiClient.building?([:units, :functionals], "asdfbaf123123", "go-server.1.project")
+  def self.building?(stages, sha, host, port="8153")
+    true
+  end
+
   def self.schedule_pipeline(host)
     uri = URI("http://#{host}:8153/go/api/pipelines/defaultPipeline/schedule")
     Net::HTTP.post_form(uri, {})
   end
 end
-
