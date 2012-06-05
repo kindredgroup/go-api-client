@@ -31,11 +31,6 @@ module GoApiClient
     {:pipelines => pipelines.values, :last_stage => stages.first}
   end
 
-  # GoApiClient.building?([:units, :functionals], "asdfbaf123123", "go-server.1.project")
-  def self.building?(stages, sha, host, port="8153")
-    true
-  end
-
   def self.build_in_progress?(options)
     options = {:stages => [:units, :functionals]}.merge(options)
     total_stages_count = [*options[:stages]].count
