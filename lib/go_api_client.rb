@@ -32,6 +32,8 @@ module GoApiClient
   end
 
   def self.build_in_progress?(options)
+    return false unless options[:revision]
+    
     options = {:stages => [:units, :functionals]}.merge(options)
     total_stages_count = [*options[:stages]].count
 
@@ -48,6 +50,10 @@ module GoApiClient
     end
   end
 
+  def self.build_finished?(options)
+    !build_in_progress?(options)
+  end
+  
   def self.schedule_pipeline(host)
     uri = URI("http://#{host}:8153/go/api/pipelines/defaultPipeline/schedule")
     Net::HTTP.post_form(uri, {})

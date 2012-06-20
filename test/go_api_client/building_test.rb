@@ -38,5 +38,12 @@ module GoApiClient
       # defaultPipeline/3.xml
       assert GoApiClient.build_in_progress?({:stages => [:units, :functionals], :revision => "dc8b3df12b16770dff48cea229559cc0ea40137f", :host => "go-server.1.project"})
     end
+
+  end
+
+  class BuildingTestWithoutRevision < Test::Unit::TestCase
+    test "should assume that a build is not running if no revision is passed in" do
+      assert false == GoApiClient.build_in_progress?({:stages => [:units, :functionals], :host => "go-server.1.project"})
+    end
   end
 end
