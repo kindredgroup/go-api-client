@@ -9,7 +9,7 @@
   <state>Completed</state>
   <properties>
     <property name="cruise_agent"><![CDATA[ira.corporate.thoughtworks.com]]></property>
-    <property name="cruise_job_duration"><![CDATA[0]]></property>
+    <property name="cruise_job_duration"><![CDATA[900]]></property>
     <property name="cruise_job_id"><![CDATA[1]]></property>
     <property name="cruise_job_result"><![CDATA[Failed]]></property>
     <property name="cruise_pipeline_counter"><![CDATA[1]]></property>
@@ -19,8 +19,8 @@
     <property name="cruise_timestamp_02_assigned"><![CDATA[2012-02-23T17:16:27+05:30]]></property>
     <property name="cruise_timestamp_03_preparing"><![CDATA[2012-02-23T17:16:37+05:30]]></property>
     <property name="cruise_timestamp_04_building"><![CDATA[2012-02-23T17:16:41+05:30]]></property>
-    <property name="cruise_timestamp_05_completing"><![CDATA[2012-02-23T17:16:41+05:30]]></property>
-    <property name="cruise_timestamp_06_completed"><![CDATA[2012-02-23T17:16:41+05:30]]></property>
+    <property name="cruise_timestamp_05_completing"><![CDATA[2012-02-23T17:16:42+05:30]]></property>
+    <property name="cruise_timestamp_06_completed"><![CDATA[2012-02-23T17:16:45+05:30]]></property>
   </properties>
   <agent uuid="c62d482a-791d-4fa4-adc3-a0808a73dd3c"/>
   <artifacts baseUri="http://localhost:8153/go/files/defaultPipeline/1/Units/1/Test" pathFromArtifactRoot="pipelines/defaultPipeline/1/Units/1/Test"/>
