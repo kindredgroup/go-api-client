@@ -16,6 +16,7 @@ module GoApiClient
       assert_equal "defaultPipeline", pipeline.name
       assert_equal "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml", pipeline.url
       assert_equal ["Update README", "Fixed build"], pipeline.commits.collect(&:message)
+      assert_equal "urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:1", pipeline.identifier
     end
 
     test "should return a list of authors from the first stage" do

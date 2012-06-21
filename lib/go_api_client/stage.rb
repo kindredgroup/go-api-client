@@ -1,7 +1,7 @@
 require 'time'
 module GoApiClient
   class Stage
-    attr_accessor :authors, :url, :name, :result, :jobs, :pipeline, :completed_at, :pipeline_cache, :http_fetcher, :counter
+    attr_accessor :authors, :url, :name, :result, :jobs, :pipeline, :completed_at, :pipeline_cache, :http_fetcher, :counter, :identifier
 
     include GoApiClient::Helpers::SimpleAttributesSupport
 
@@ -27,6 +27,7 @@ module GoApiClient
       self.jobs         = @root.xpath("./jobs/job").collect do |job_element|
                             Job.from(job_element.attributes["href"].value, :http_fetcher => http_fetcher)
                           end
+      self.identifier   = @root.xpath('./id').first.content
 
       pipeline_link     = @root.xpath("./pipeline").first.attributes["href"].value
 
@@ -45,7 +46,7 @@ module GoApiClient
     def passed?
       !failed?
     end
-    
+
     private
     def href_from(xml)
       xml.first.attribute('href').value unless xml.empty?
