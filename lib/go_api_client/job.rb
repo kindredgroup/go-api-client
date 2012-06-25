@@ -36,14 +36,15 @@ module GoApiClient
       self.identifier    = @root.xpath('./id').first.content
 
       PROPERTIES.each do |variable, property_name|
-        property_value = @root.xpath("./properties/property[@name='#{property_name}']").first.content
+        property_value = @root.xpath("./properties/property[@name='#{property_name}']").first.content rescue nil
+
+        next if property_value.nil? || property_value.empty?
 
         if property_name =~ /timestamp/
           property_value = Time.parse(property_value).utc
         elsif property_value =~ /^\d+$/
           property_value = property_value.to_i
         end
-
         self.send("#{variable}=", property_value)
       end
 
