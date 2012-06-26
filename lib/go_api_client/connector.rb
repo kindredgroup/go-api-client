@@ -1,5 +1,6 @@
 module GoApiClient
   class Connector
+    attr_reader :stages
     def initialize(options_hsh)
       @options = ({:protocol => 'http',
                    :port => 8153,
@@ -15,14 +16,10 @@ module GoApiClient
     def connect!
       @http_fetcher = GoApiClient::HttpFetcher.new(:username => @options[:username], :password => @options[:password])
       @feed = fetch_feed
-      self
-    end
-
-    def stages
       @stages = @feed.entries.collect do |entry|
         Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => @pipelines, :http_fetcher => @http_fetcher)
       end
-      @stages
+      self
     end
 
 
