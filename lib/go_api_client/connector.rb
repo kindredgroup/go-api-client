@@ -22,6 +22,9 @@ module GoApiClient
       self
     end
 
+    def pipelines
+      @pipelines.values
+    end
 
     private
     def fetch_feed
