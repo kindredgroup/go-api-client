@@ -13,7 +13,7 @@ module GoApiClient
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages.xml"))
       runs = GoApiClient.runs(:host => "localhost", :port => 8153)
       pipelines = runs[:pipelines]
-      assert_equal "http://localhost:8153/go/api/stages/2.xml", runs[:last_stage_id]
+      assert_equal "http://localhost:8153/go/api/stages/2.xml", runs[:latest_atom_entry_id]
       stages = pipelines.first.stages
 
       assert_equal 1, pipelines.count
@@ -41,8 +41,7 @@ module GoApiClient
 
       assert_equal "http://localhost:8153/go/files/defaultPipeline/1/Acceptance/1/Test/cruise-output/console.log", stages.first.jobs.first.console_log_url
       assert_equal "http://localhost:8153/go/files/defaultPipeline/1/Units/1/Test/cruise-output/console.log", stages.last.jobs.first.console_log_url
-
-
+      p "Number of stages #{stages.count}"
       assert_equal 'urn:x-go.studios.thoughtworks.com:stage-id:defaultPipeline:1:Acceptance:1', stages.first.identifier
       assert_equal 'urn:x-go.studios.thoughtworks.com:stage-id:defaultPipeline:1:Units:1', stages.last.identifier
     end
