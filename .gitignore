@@ -4,3 +4,5 @@ bundle/
 pkg/*
 /tmp/
 /vendor/ruby
+.idea/*
+TAGS
