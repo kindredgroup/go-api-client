@@ -17,19 +17,25 @@ require 'go_api_client/connector'
 
 module GoApiClient
   def self.runs(options)
-    options = ({:protocol => 'http', :port => 8153, :username => nil, :password => nil, :stop_at => nil, :pipeline_name => 'defaultPipeline'}).merge(options)
+    options = ({:protocol => 'http', :port => 8153, :username => nil, :password => nil, :last_stage_id => nil, :pipeline_name => 'defaultPipeline'}).merge(options)
 
     http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
 
     feed_url = "#{options[:protocol]}://#{options[:host]}:#{options[:port]}/go/api/pipelines/#{options[:pipeline_name]}/stages.xml"
-    feed = GoApiClient::Atom::Feed.new(feed_url, options[:stop_at])
+    feed = GoApiClient::Atom::Feed.new(feed_url, options[:last_stage_id])
     feed.fetch!(http_fetcher)
 
     pipelines = {}
     stages = feed.entries.collect do |entry|
       Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines, :http_fetcher => http_fetcher)
     end
-    {:pipelines => pipelines.values, :last_stage => stages.first}
+    runs_hash = Hash.new
+    runs_hash[:pipelines] = pipelines.values
+    if stages && stages.count > 0
+      runs_hash[:last_stage_id] = stages.first.url
+    end
+    
+    runs_hash
   end
 
   def self.build_in_progress?(options)
