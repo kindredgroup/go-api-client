@@ -29,7 +29,7 @@ module GoApiClient
                   entries.find_index {|e| e == entry_or_id}
                 end
 
-        entries[0..index-1]
+        index.zero? ? [] : entries[0..index-1]
       end
 
       def contains_entry?(entry_or_id)

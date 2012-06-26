@@ -13,7 +13,7 @@ module GoApiClient
       stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages.xml"))
       runs = GoApiClient.runs(:host => "localhost", :port => 8153)
       pipelines = runs[:pipelines]
-      assert_equal "http://localhost:8153/go/api/stages/2.xml", runs[:latest_atom_entry_id]
+      assert_equal "http://localhost:8153/go/pipelines/defaultPipeline/1/Acceptance/1", runs[:latest_atom_entry_id]
       stages = pipelines.first.stages
 
       assert_equal 1, pipelines.count

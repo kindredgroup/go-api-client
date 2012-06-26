@@ -21,6 +21,7 @@ module GoApiClient
     http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
 
     feed_url = "#{options[:protocol]}://#{options[:host]}:#{options[:port]}/go/api/pipelines/#{options[:pipeline_name]}/stages.xml"
+
     feed = GoApiClient::Atom::Feed.new(feed_url, options[:latest_atom_entry_id])
     feed.fetch!(http_fetcher)
 
@@ -28,13 +29,11 @@ module GoApiClient
     stages = feed.entries.collect do |entry|
       Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines, :http_fetcher => http_fetcher)
     end
-    runs_hash = Hash.new
-    runs_hash[:pipelines] = pipelines.values
-    if stages && stages.count > 0
-      runs_hash[:latest_atom_entry_id] = stages.first.url
-    end
-    
-    runs_hash
+
+    return {
+      :pipelines => pipelines.values,
+      :latest_atom_entry_id => stages.empty? ? options[:latest_atom_entry_id] : feed.entries.first.id
+    }
   end
 
   def self.build_in_progress?(options)
