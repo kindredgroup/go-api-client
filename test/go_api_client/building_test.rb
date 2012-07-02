@@ -26,12 +26,12 @@ module GoApiClient
 
     test "should tell that a build is done if all stages have completed" do
       # defaultPipeline/1.xml
-      assert false == GoApiClient.build_in_progress?({:stages => [:units, :functionals], :revision => "a84ffc0e58b7b2ba7d5b15abae70c2d921b835e6", :host => "go-server.1.project"})
+      assert_false GoApiClient.build_in_progress?({:stages => [:units, :functionals], :revision => "a84ffc0e58b7b2ba7d5b15abae70c2d921b835e6", :host => "go-server.1.project"})
     end
 
     test "should tell that a build is done if a non-terminal stage has failed" do
       # defaultPipeline/2.xml
-      assert false == GoApiClient.build_in_progress?({:stages => [:units, :functionals], :revision => "f475d63c2e0f4db5c26e79541278afcb00d63cde", :host => "go-server.1.project"})
+      assert_false GoApiClient.build_in_progress?({:stages => [:units, :functionals], :revision => "f475d63c2e0f4db5c26e79541278afcb00d63cde", :host => "go-server.1.project"})
     end
 
     test "should tell that a build is in progress if all non-terminal stage has passed and terminal stage has not completed" do
