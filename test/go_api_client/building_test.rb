@@ -46,4 +46,12 @@ module GoApiClient
       assert false == GoApiClient.build_in_progress?({:stages => [:units, :functionals], :host => "go-server.1.project"})
     end
   end
+
+  class BuildingWithNoExistingRuns < Test::Unit::TestCase
+    test "should assume that build is not running if there is no stages history" do
+      stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml").to_return(:body => file_contents("stages_empty.xml"))
+
+      assert_false GoApiClient.build_in_progress?({:stages => [:units, :functionals], :revision => "some revision", :host => "localhost"})
+    end
+  end
 end

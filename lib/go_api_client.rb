@@ -43,9 +43,12 @@ module GoApiClient
     total_stages_count = [*options[:stages]].count
 
     pipelines = GoApiClient.runs(options)[:pipelines]
+    return false if pipelines.empty?
+
     pipeline = pipelines.find do |pipeline|
       pipeline.commits.map(&:revision).include?(options[:revision])
     end
+
     built_stages = pipeline.stages
 
     if built_stages.count == total_stages_count
