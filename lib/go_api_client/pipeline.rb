@@ -1,6 +1,6 @@
 module GoApiClient
   class Pipeline
-    attr_accessor :url, :commits, :label, :counter, :authors, :stages, :name, :http_fetcher, :identifier
+    attr_accessor :url, :commits, :label, :counter, :authors, :stages, :name, :http_fetcher, :identifier, :schedule_time
 
     include GoApiClient::Helpers::SimpleAttributesSupport
 
@@ -27,6 +27,7 @@ module GoApiClient
       self.counter    = @root.attributes["counter"].value.to_i
       self.url        = href_from(@root.xpath("./link[@rel='self']"))
       self.identifier = @root.xpath("./id").first.content
+      self.schedule_time = Time.parse(@root.xpath('./scheduleTime').first.content).utc
       self.commits    = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
         Commit.new(changeset).parse!
       end
