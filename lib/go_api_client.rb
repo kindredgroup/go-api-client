@@ -37,31 +37,18 @@ module GoApiClient
   end
 
   def self.build_in_progress?(options)
-    return false unless options[:revision]
-    
-    options = {:stages => [:units, :functionals]}.merge(options)
-    total_stages_count = [*options[:stages]].count
-
-    pipelines = GoApiClient.runs(options)[:pipelines]
-    return false if pipelines.empty?
-
-    pipeline = pipelines.find do |pipeline|
-      pipeline.commits.map(&:revision).include?(options[:revision])
-    end
-
-    built_stages = pipeline.stages
-
-    if built_stages.count == total_stages_count
-      false
-    else
-      built_stages.all?(&:passed?)
-    end
+    raise ArgumentError("Hostname is mandatory") unless options[:host]
+    options = ({:protocol => 'http', :port => 8153, :username => nil, :password => nil}).merge(options)
+    http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
+    url = "#{options[:protocol]}://#{options[:host]}:#{options[:port]}/go/cctray.xml"
+    doc = Nokogiri::XML(http_fetcher.get_response_body(url))
+    doc.xpath("//Project[contains(@activity, 'Building')]").count > 0
   end
 
   def self.build_finished?(options)
     !build_in_progress?(options)
   end
-  
+
   def self.schedule_pipeline(host)
     uri = URI("http://#{host}:8153/go/api/pipelines/defaultPipeline/schedule")
     Net::HTTP.post_form(uri, {})
