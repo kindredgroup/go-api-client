@@ -18,5 +18,10 @@ module GoApiClient
     test "equality" do
       assert_equal User.parse("foobar <foo@example.com>"), User.parse("foobar <foo@example.com>")
     end
+
+    test "hashcode" do
+      assert_equal User.parse("foobar <foo@example.com>").hash, User.parse("foobar <foo@example.com>").hash
+      assert_not_equal User.parse("bar <bar@example.com>").hash, User.parse("foo <foo@example.com>").hash
+    end
   end
 end
