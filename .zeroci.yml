@@ -1,1 +1,1 @@
-post_build: curl -fu go-saas-admin:h0nkyt0nk -X POST http://ci.zeroci.com:8153/go/api/pipelines/Publish-RubyGems-Git/schedule -d "materials[go-api-client]=$GO_REVISION"
+post_build: curl -fu go-saas-admin:h0nkyt0nk -X POST http://ci.zeroci.com:8153/go/api/pipelines/Go-API-Client/schedule -d "materials[go-api-client]=$GO_REVISION"
