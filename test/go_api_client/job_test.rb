@@ -16,6 +16,7 @@ module GoApiClient
       assert_equal 'urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:1:Units:1:Test', job.identifier
 
       assert_equal 900, job.duration
+      assert_equal "Test", job.name
       assert_equal "Failed", job.result
       assert_equal Time.parse('2012-02-23 11:46:15 UTC'), job.scheduled
       assert_equal Time.parse('2012-02-23 11:46:27 UTC'), job.assigned
