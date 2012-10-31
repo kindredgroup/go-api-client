@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pipeline name="defaultPipeline" counter="5" label="5">
+  <link rel="self" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/5.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:5]]></id>
+  <link rel="insertedAfter" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/4.xml"/>
+  <scheduleTime>2012-10-29T08:08:08Z</scheduleTime>
+  <materials>
+    <material materialUri="http://go-server.2.project:8153/go/api/materials/1.xml" type="GitMaterial" url="git://go-saas-worker.2.project/ThoughtWorksInc/go_saas_trigger" branch="master">
+      <modifications>
+        <changeset changesetUri="http://go-server.2.project:8153/go/api/materials/1/changeset/53fd6b7cc1d95f8d198b3e52fc0f3755e12ff0de.xml">
+          <user><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></user>
+          <checkinTime>2012-10-29T08:07:53Z</checkinTime>
+          <revision><![CDATA[53fd6b7cc1d95f8d198b3e52fc0f3755e12ff0de]]></revision>
+          <message><![CDATA[Merge branch 'master' of github.com:ThoughtWorksInc/go_saas_trigger]]></message>
+        </changeset>
+        <changeset changesetUri="http://go-server.2.project:8153/go/api/materials/1/changeset/a9f3c5aa0c2ddd7601dfe81f6a8970de51f63bd1.xml">
+          <user><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></user>
+          <checkinTime>2012-10-29T08:07:32Z</checkinTime>
+          <revision><![CDATA[a9f3c5aa0c2ddd7601dfe81f6a8970de51f63bd1]]></revision>
+          <message><![CDATA[Tweak the config files for running on vagrant]]></message>
+          <file name="config/app_config.yml" action="modified"/>
+          <file name="config/database.yml" action="modified"/>
+        </changeset>
+      </modifications>
+    </material>
+  </materials>
+  <stages>
+    <stage href="http://go-server.2.project:8153/go/api/stages/9.xml"/>
+    <stage href="http://go-server.2.project:8153/go/api/stages/10.xml"/>
+  </stages>
+  <approvedBy><![CDATA[anonymous]]></approvedBy>
+</pipeline>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<stage name="Units" counter="1">
+  <link rel="self" href="http://go-server.2.project:8153/go/api/stages/7.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:stage-id:defaultPipeline:4:Units:1]]></id>
+  <pipeline name="defaultPipeline" counter="4" label="4" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/4.xml"/>
+  <updated>2012-10-26T05:52:51Z</updated>
+  <result>Passed</result>
+  <state>Completed</state>
+  <approvedBy><![CDATA[anonymous]]></approvedBy>
+  <jobs>
+    <job href="http://go-server.2.project:8153/go/api/jobs/7.xml"/>
+  </jobs>
+</stage>

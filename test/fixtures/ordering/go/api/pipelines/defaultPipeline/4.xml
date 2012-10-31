@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pipeline name="defaultPipeline" counter="4" label="4">
+  <link rel="self" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/4.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:4]]></id>
+  <link rel="insertedAfter" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/3.xml"/>
+  <scheduleTime>2012-10-26T05:52:10Z</scheduleTime>
+  <materials>
+    <material materialUri="http://go-server.2.project:8153/go/api/materials/1.xml" type="GitMaterial" url="git://go-saas-worker.2.project/ThoughtWorksInc/go_saas_trigger" branch="master">
+      <modifications>
+        <changeset changesetUri="http://go-server.2.project:8153/go/api/materials/1/changeset/48ce81580ecb6ab8d1c7933087f85466c23c16c0.xml">
+          <user><![CDATA[Sahil Muthoo and James Gray <go-saas+sahilm+jrgray@thoughtworks.com>]]></user>
+          <checkinTime>2012-10-26T05:46:27Z</checkinTime>
+          <revision><![CDATA[48ce81580ecb6ab8d1c7933087f85466c23c16c0]]></revision>
+          <message><![CDATA[Use the project_go_server role to setup the project's go server]]></message>
+          <file name="lib/go_saas_trigger/node.rb" action="modified"/>
+          <file name="test/node_test.rb" action="modified"/>
+        </changeset>
+      </modifications>
+    </material>
+  </materials>
+  <stages>
+    <stage href="http://go-server.2.project:8153/go/api/stages/7.xml"/>
+    <stage href="http://go-server.2.project:8153/go/api/stages/8.xml"/>
+  </stages>
+  <approvedBy><![CDATA[anonymous]]></approvedBy>
+</pipeline>

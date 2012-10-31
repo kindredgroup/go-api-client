@@ -20,7 +20,7 @@ module GoApiClient
 
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = uri.scheme == 'https'
-
+      
       res = http.start do |http|
         req = Net::HTTP::Get.new(uri.request_uri)
         req.basic_auth(username, password) if username || password

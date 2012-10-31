@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pipeline name="defaultPipeline" counter="2" label="2">
+  <link rel="self" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/2.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:2]]></id>
+  <link rel="insertedAfter" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/1.xml"/>
+  <scheduleTime>2012-10-19T15:18:09Z</scheduleTime>
+  <materials>
+    <material materialUri="http://go-server.2.project:8153/go/api/materials/1.xml" type="GitMaterial" url="git://go-saas-worker.2.project/ThoughtWorksInc/go_saas_trigger" branch="master">
+      <modifications>
+        <changeset changesetUri="http://go-server.2.project:8153/go/api/materials/1/changeset/eb37d12dfcf3781148f9d155b7ae8fd372669e3d.xml">
+          <user><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></user>
+          <checkinTime>2012-10-19T15:17:07Z</checkinTime>
+          <revision><![CDATA[eb37d12dfcf3781148f9d155b7ae8fd372669e3d]]></revision>
+          <message><![CDATA[Ensure we log the initialisation message after the logger is setup]]></message>
+          <file name="lib/go_saas_trigger/amqp_client.rb" action="modified"/>
+        </changeset>
+      </modifications>
+    </material>
+  </materials>
+  <stages>
+    <stage href="http://go-server.2.project:8153/go/api/stages/3.xml"/>
+    <stage href="http://go-server.2.project:8153/go/api/stages/4.xml"/>
+  </stages>
+  <approvedBy><![CDATA[anonymous]]></approvedBy>
+</pipeline>

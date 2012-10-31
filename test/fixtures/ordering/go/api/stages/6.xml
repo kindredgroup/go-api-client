@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<stage name="PostBuild" counter="1">
+  <link rel="self" href="http://go-server.2.project:8153/go/api/stages/6.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:stage-id:defaultPipeline:3:PostBuild:1]]></id>
+  <pipeline name="defaultPipeline" counter="3" label="3" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/3.xml"/>
+  <updated>2012-10-23T08:47:11Z</updated>
+  <result>Passed</result>
+  <state>Completed</state>
+  <approvedBy><![CDATA[changes]]></approvedBy>
+  <jobs>
+    <job href="http://go-server.2.project:8153/go/api/jobs/6.xml"/>
+  </jobs>
+</stage>

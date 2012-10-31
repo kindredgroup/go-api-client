@@ -22,12 +22,6 @@ class Test::Unit::TestCase
   def file_contents(file_name)
     File.read(File.expand_path("../../test/fixtures/#{file_name}", __FILE__))
   end
-  
-  teardown do
-    WebMock::StubRegistry.instance.request_stubs.each do |stub|
-      assert_requested(stub)
-    end
-  end
 end
 
 module Test::Unit::Assertions

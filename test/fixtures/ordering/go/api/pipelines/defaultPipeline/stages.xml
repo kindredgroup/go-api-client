@@ -1,0 +1,255 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:go="http://www.thoughtworks-studios.com/ns/go">
+    <title><![CDATA[defaultPipeline]]></title>
+    <id>http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/stages.xml</id>
+    <author>
+        <name>Go</name>
+    </author>
+    <updated>2012-10-29T08:09:11Z</updated>
+    <link rel="self" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/stages.xml"/>
+
+    
+        <!-- <link rel="next" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/stages.xml?before=6"/> -->
+    
+
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(5) stage PostBuild(1) Passed]]></title>
+            <updated>2012-10-29T08:09:11Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/5/PostBuild/1</id>
+
+
+            <author>
+                <name><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/api/stages/10.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/5/PostBuild/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/5.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/5/PostBuild/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(5) stage Units(1) Passed]]></title>
+            <updated>2012-10-29T08:08:43Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/5/Units/1</id>
+
+
+            <author>
+                <name><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/api/stages/9.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/5/Units/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/5.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/5/Units/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(4) stage PostBuild(1) Passed]]></title>
+            <updated>2012-10-26T05:53:19Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/4/PostBuild/1</id>
+
+
+            <author>
+                <name><![CDATA[Sahil Muthoo and James Gray <go-saas+sahilm+jrgray@thoughtworks.com>]]></name>
+            </author>
+
+            
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/api/stages/8.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/4/PostBuild/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/4.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/4/PostBuild/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(4) stage Units(1) Passed]]></title>
+            <updated>2012-10-26T05:52:51Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/4/Units/1</id>
+
+
+            <author>
+                <name><![CDATA[Sahil Muthoo and James Gray <go-saas+sahilm+jrgray@thoughtworks.com>]]></name>
+            </author>
+
+            
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/api/stages/7.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/4/Units/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/4.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/4/Units/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(3) stage PostBuild(1) Passed]]></title>
+            <updated>2012-10-23T08:47:11Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/3/PostBuild/1</id>
+
+
+            <author>
+                <name><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/api/stages/6.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/3/PostBuild/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/3.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/3/PostBuild/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(3) stage Units(1) Passed]]></title>
+            <updated>2012-10-23T08:46:42Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/3/Units/1</id>
+
+
+            <author>
+                <name><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/api/stages/5.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/3/Units/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/3.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/3/Units/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(2) stage PostBuild(1) Passed]]></title>
+            <updated>2012-10-19T15:19:18Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/2/PostBuild/1</id>
+
+
+            <author>
+                <name><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/api/stages/4.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/2/PostBuild/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/2.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/2/PostBuild/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(2) stage Units(1) Passed]]></title>
+            <updated>2012-10-19T15:18:50Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/2/Units/1</id>
+
+
+            <author>
+                <name><![CDATA[Ketan Padegaonkar <KetanPadegaonkar@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/api/stages/3.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/2/Units/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/2.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/2/Units/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(1) stage PostBuild(1) Passed]]></title>
+            <updated>2012-10-17T09:47:47Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/1/PostBuild/1</id>
+
+
+            <author>
+                <name><![CDATA[Badrinath Janakiraman <badri.j@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/api/stages/2.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="PostBuild Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/1/PostBuild/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/1.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/1/PostBuild/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+        <entry>
+            <title><![CDATA[defaultPipeline(1) stage Units(1) Passed]]></title>
+            <updated>2012-10-17T09:47:19Z</updated>
+            <id>http://go-server.2.project:8153/go/pipelines/defaultPipeline/1/Units/1</id>
+
+
+            <author>
+                <name><![CDATA[Badrinath Janakiraman <badri.j@gmail.com>]]></name>
+            </author>
+
+            
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/api/stages/1.xml" rel="alternate" type="application/vnd.go+xml"/>
+            <link title="Units Stage Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/1/Units/1" rel="alternate" type="text/html"/>
+            
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/1.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+            <link title="defaultPipeline Pipeline Detail" href="http://go-server.2.project:8153/go/pipelines/defaultPipeline/1/Units/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+
+
+
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed" />
+            <category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed" />
+        </entry>
+    
+</feed>

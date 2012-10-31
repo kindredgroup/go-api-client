@@ -30,8 +30,12 @@ module GoApiClient
       Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines, :http_fetcher => http_fetcher)
     end
 
+    pipelines.values.each do |p|
+      p.stages = p.stages.sort_by {|s| s.completed_at }
+    end
+
     return {
-      :pipelines => pipelines.values,
+      :pipelines => pipelines.values.sort_by {|p| p.counter},
       :latest_atom_entry_id => stages.empty? ? options[:latest_atom_entry_id] : feed.entries.first.id
     }
   end

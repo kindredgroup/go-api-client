@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pipeline name="defaultPipeline" counter="1" label="1">
+  <link rel="self" href="http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/1.xml"/>
+  <id><![CDATA[urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:1]]></id>
+  <scheduleTime>2012-10-17T09:46:08Z</scheduleTime>
+  <materials>
+    <material materialUri="http://go-server.2.project:8153/go/api/materials/1.xml" type="GitMaterial" url="git://go-saas-worker.2.project/ThoughtWorksInc/go_saas_trigger" branch="master">
+      <modifications>
+        <changeset changesetUri="http://go-server.2.project:8153/go/api/materials/1/changeset/fed1b0c09dffc299f5a7ff51223cacaceb7cd453.xml">
+          <user><![CDATA[Badrinath Janakiraman <badri.j@gmail.com>]]></user>
+          <checkinTime>2012-10-16T15:05:34Z</checkinTime>
+          <revision><![CDATA[fed1b0c09dffc299f5a7ff51223cacaceb7cd453]]></revision>
+          <message><![CDATA[Ensure that queue, exchange creations are durable and that all messages are persistent]]></message>
+          <file name="lib/go_saas_trigger/amqp_client.rb" action="modified"/>
+          <file name="lib/go_saas_trigger/cli/agent_converger.rb" action="modified"/>
+          <file name="lib/go_saas_trigger/cli/create_project.rb" action="modified"/>
+          <file name="lib/go_saas_trigger/cli/delete_project.rb" action="modified"/>
+          <file name="lib/go_saas_trigger/cli/dns_provisioner.rb" action="modified"/>
+          <file name="lib/go_saas_trigger/cli/project_provisioner.rb" action="modified"/>
+          <file name="lib/go_saas_trigger/cli/project_unprovisioner.rb" action="modified"/>
+        </changeset>
+      </modifications>
+    </material>
+  </materials>
+  <stages>
+    <stage href="http://go-server.2.project:8153/go/api/stages/1.xml"/>
+    <stage href="http://go-server.2.project:8153/go/api/stages/2.xml"/>
+  </stages>
+  <approvedBy><![CDATA[anonymous]]></approvedBy>
+</pipeline>
