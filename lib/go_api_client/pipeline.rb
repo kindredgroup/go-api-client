@@ -28,7 +28,7 @@ module GoApiClient
       self.url        = href_from(@root.xpath("./link[@rel='self']"))
       self.identifier = @root.xpath("./id").first.content
       self.schedule_time = Time.parse(@root.xpath('./scheduleTime').first.content).utc
-      self.commits    = @root.xpath("./materials/material/modifications/changeset").collect do |changeset|
+      self.commits    = @root.xpath('./materials/material[@type = "GitMaterial"]/modifications/changeset').collect do |changeset|
         Commit.new(changeset).parse!
       end
 
