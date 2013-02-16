@@ -1,12 +1,40 @@
 h2. Go API Client Gem
 
-This gem provides API access to the go api.
+This gem provides access to the "ThoughtWorks Studios Go":http://www.thoughtworks-studios.com/go-continuous-delivery API, it is capable of parsing out the atom feed and generate an object graph with all the pipelines/stages/jobs and committer information.
 
 h2. Installation
 
 <pre>$ [sudo] gem install go_api_client</pre>
 
 h2. Usage
+
+See "GoApiClient":http://rubydoc.info/github/ThoughtWorksInc/go-api-client/GoApiClient for supported options and more details.
+
+<pre>
+require 'go_api_client'
+
+# check if the server is building
+GoApiClient.build_in_progress?(:host => 'go.example.com')
+
+# check if the build has finished
+GoApiClient.build_finished?(:host => 'go.example.com')
+
+# schedule a pipeline
+GoApiClient.schedule_pipeline(:host => 'go.example.com', :pipeline_name => 'MyProject')
+
+# fetch a list of all pipelines
+latest_atom_entry_id = nil
+while true
+  last_run = GoApiClient.runs(:host => 'go.example.com', :pipeline_name => 'MyProject', :latest_atom_entry_id => latest_atom_entry_id)
+  latest_atom_entry_id = last_run.latest_atom_entry_id # => the last stage that was seen by the api client, keep this for further calls to #runs
+
+  pipelines = last_run.pipelines
+  last_pipeline = pipelines.last
+  puts "Finished running stage #{last_pipeline.stages.last.name} from pipeline #{last_pipeline.name}."
+  puts "The last commit(#{last_pipeline.commits.last.revision}) was checked in by #{last_pipeline.commits.last.user}"
+  sleep 10
+end
+</pre>
 
 h2. License
 
