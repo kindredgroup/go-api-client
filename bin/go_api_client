@@ -1,3 +1,0 @@
-#!/usr/bin/env ruby
-
-require "go_api_client"
