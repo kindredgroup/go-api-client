@@ -6,3 +6,6 @@ pkg/*
 /vendor/ruby
 .idea/*
 TAGS
+.yardoc
+doc
+/bin/
