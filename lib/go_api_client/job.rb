@@ -1,6 +1,6 @@
 module GoApiClient
   class Job
-    attr_accessor :artifacts_uri, :console_log_url, :url, :identifier, :http_fetcher, :name
+    attr_accessor :artifacts_uri, :console_log_url, :url, :identifier, :http_fetcher, :name, :artifacts
 
     PROPERTIES = {
       :duration   => :cruise_job_duration,
@@ -35,6 +35,10 @@ module GoApiClient
       self.url           = href_from(@root.xpath("./link[@rel='self']"))
       self.identifier    = @root.xpath('./id').first.content
       self.name          = @root.attributes['name'].value
+      self.artifacts     = @root.xpath("./artifacts/artifact").collect do |artifact_element|
+                            Artifact.from(self.artifacts_uri, artifact_element)
+                          end
+      
       PROPERTIES.each do |variable, property_name|
         property_value = @root.xpath("./properties/property[@name='#{property_name}']").first.content rescue nil
 

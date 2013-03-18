@@ -10,6 +10,7 @@ require 'go_api_client/atom'
 require 'go_api_client/pipeline'
 require 'go_api_client/stage'
 require 'go_api_client/job'
+require 'go_api_client/artifact'
 require 'go_api_client/commit'
 require 'go_api_client/user'
 
