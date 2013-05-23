@@ -45,10 +45,10 @@ module GoApiClient
     # @option options [Boolean] :ssl  (false) If connection should be made over ssl.
     # @option options [String]  :username (nil) The username to be used if server or the pipeline requires authorization.
     # @option options [String]  :password (nil) The password to be used if server or the pipeline requires authorization.
-    # @option options [String]  :pipeline_name ("defaultPipeline") The name of the pipeline that should be fetched.
+    # @option options [String]  :pipeline_name The name of the pipeline that should be fetched.
     # @option options [String]  :latest_atom_entry_id (nil) The id of the last atom feed entry
     def runs(options={})
-      options = ({:ssl => false, :host => 'localhost', :port => 8153, :username => nil, :password => nil, :latest_atom_entry_id => nil, :pipeline_name => 'defaultPipeline'}).merge(options)
+      options = ({:ssl => false, :host => 'localhost', :port => 8153, :username => nil, :password => nil, :latest_atom_entry_id => nil}).merge(options)
 
       http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
 
