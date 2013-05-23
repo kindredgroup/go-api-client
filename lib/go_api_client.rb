@@ -51,8 +51,8 @@ module GoApiClient
       options = ({:ssl => false, :host => 'localhost', :port => 8153, :username => nil, :password => nil, :latest_atom_entry_id => nil}).merge(options)
 
       http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
-
-      feed_url = "#{options[:ssl] ? 'https' : 'http'}://#{options[:host]}:#{options[:port]}/go/api/pipelines/#{options[:pipeline_name]}/stages.xml"
+      pipeline_name = options[:pipeline_name] || "defaultPipeline"
+      feed_url = "#{options[:ssl] ? 'https' : 'http'}://#{options[:host]}:#{options[:port]}/go/api/pipelines/#{pipeline_name}/stages.xml"
 
       feed = GoApiClient::Atom::Feed.new(feed_url, options[:latest_atom_entry_id])
       feed.fetch!(http_fetcher)
