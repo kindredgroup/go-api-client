@@ -70,6 +70,27 @@ module GoApiClient
       runs = GoApiClient.runs(:host => "localhost", :port => 8153)
 
       assert runs.pipelines.empty?
+
+    end
+
+    test "should returns feed data for all pipelines available on the server" do
+      stub_request(:get,"http://localhost:8153/go/api/pipelines.xml" ).to_return(:body => file_contents("pipelines.xml"))
+
+      stub_request(:get,"http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml" ).to_return(:body => file_contents("default_pipeline.xml"))
+      stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml").to_return(:body => file_contents("pipelines_1.xml"))
+      stub_request(:get, "http://localhost:8153/go/api/stages/1.xml").to_return(:body => file_contents("stages_1.xml"))
+      stub_request(:get, "http://localhost:8153/go/api/jobs/1.xml").to_return(:body => file_contents("jobs_1.xml"))
+
+
+      stub_request(:get,"http://localhost:8153/go/api/pipelines/integrationPipeline/stages.xml" ).to_return(:body => file_contents("integration_pipeline.xml"))
+      stub_request(:get, "http://localhost:8153/go/api/pipelines/integrationPipeline/1.xml").to_return(:body => file_contents("pipelines_1.xml"))
+      stub_request(:get, "http://localhost:8153/go/api/stages/1.xml").to_return(:body => file_contents("stages_1.xml"))
+      stub_request(:get, "http://localhost:8153/go/api/jobs/1.xml").to_return(:body => file_contents("jobs_1.xml"))
+
+
+
+      all_runs = GoApiClient::all_runs({:host => "localhost"})
+      assert_equal all_runs.keys, %w(http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml http://localhost:8153/go/api/pipelines/integrationPipeline/stages.xml)
     end
   end
 end

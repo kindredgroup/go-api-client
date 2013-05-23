@@ -25,6 +25,16 @@ module GoApiClient
         end while feed_page.next_page && !feed_page.contains_entry?(@last_entry_id)
         self
       end
+
+      def fetch_all!(http_fetcher = HttpFetcher.new)
+        begin
+          doc = Nokogiri::XML(http_fetcher.get_response_body(@atom_feed_url))
+          doc.css("pipeline").inject({}) do |hash, feed|
+            hash[feed.attr("href")] = GoApiClient::Atom::Feed.new(feed.attr("href")).fetch!
+            hash
+          end
+        end
+      end
     end
   end
 end

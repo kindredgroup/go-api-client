@@ -1,0 +1,5 @@
+<pipelines>
+<link rel="self" href="http://localhost:8153/go/api/pipelines.xml"/>
+<pipeline href="http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml"/>
+<pipeline href="http://localhost:8153/go/api/pipelines/integrationPipeline/stages.xml"/>
+</pipelines>

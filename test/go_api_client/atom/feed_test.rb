@@ -20,6 +20,20 @@ module GoApiClient
         assert_equal 25*3, feed.entries.count
       end
 
+      test "should fetch all the pipelines" do
+        stub_request(:get,"https://localhost:8153/go/api/pipelines.xml" ).to_return(:body => file_contents("pipelines.xml"))
+        stub_request(:get,"http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml" ).to_return(:body => file_contents("default_pipeline.xml"))
+        stub_request(:get,"http://localhost:8153/go/api/pipelines/integrationPipeline/stages.xml" ).to_return(:body => file_contents("integration_pipeline.xml"))
+
+        feeds = GoApiClient::Atom::Feed.new("https://localhost:8153/go/api/pipelines.xml", nil).fetch_all!
+        assert_equal 2, feeds.count
+        assert_equal "http://localhost:8153/go/api/pipelines/defaultPipeline/stages.xml", feeds.keys[0]
+        assert_equal "http://localhost:8153/go/api/pipelines/integrationPipeline/stages.xml", feeds.keys[1]
+
+        assert_equal 1, feeds.values[0].entries.count
+        assert_equal 1, feeds.values[1].entries.count
+      end
     end
+
   end
 end

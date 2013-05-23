@@ -1,0 +1,24 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:go="http://www.thoughtworks-studios.com/ns/go">
+<title><![CDATA[integrationPipeline]]></title>
+<id>http://localhost:8153/go/api/pipelines/integrationPipeline/stages.xml</id>
+<author>
+<name>Go</name>
+</author>
+<updated>2013-05-23T05:56:17Z</updated>
+<link rel="self" href="http://localhost:8153/go/api/pipelines/integrationPipeline/stages.xml"/>
+<entry>
+<title><![CDATA[integrationPipeline(7) stage FastFeedback(1) Passed]]></title>
+<updated>2013-05-23T05:56:17Z</updated>
+<id>http://localhost:8153/go/pipelines/integrationPipeline/7/FastFeedback/1</id>
+<author>
+<name><![CDATA[Shishir <shishir.das@gmail.com>]]></name>
+</author>
+<link title="FastFeedback Stage Detail" href="http://localhost:8153/go/api/stages/1.xml" rel="alternate" type="application/vnd.go+xml"/>
+<link title="FastFeedback Stage Detail" href="http://localhost:8153/go/pipelines/integrationPipeline/1/FastFeedback/1" rel="alternate" type="text/html"/>
+<link title="integrationPipeline Pipeline Detail" href="http://localhost:8153/go/api/pipelines/integrationPipeline/1.xml" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="application/vnd.go+xml"/>
+<link title="integrationPipeline Pipeline Detail" href="http://localhost:8153/go/pipelines/integrationPipeline/1/FastFeedback/1/pipeline" rel="http://www.thoughtworks-studios.com/ns/relations/go/pipeline" type="text/html"/>
+<category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="stage" label="Stage"/>
+<category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="completed" label="Completed"/>
+<category scheme="http://www.thoughtworks-studios.com/ns/categories/go" term="passed" label="Passed"/>
+</entry>
+</feed>

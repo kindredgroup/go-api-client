@@ -51,24 +51,24 @@ module GoApiClient
       options = ({:ssl => false, :host => 'localhost', :port => 8153, :username => nil, :password => nil, :latest_atom_entry_id => nil}).merge(options)
 
       http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
+
       pipeline_name = options[:pipeline_name] || "defaultPipeline"
       feed_url = "#{options[:ssl] ? 'https' : 'http'}://#{options[:host]}:#{options[:port]}/go/api/pipelines/#{pipeline_name}/stages.xml"
-
       feed = GoApiClient::Atom::Feed.new(feed_url, options[:latest_atom_entry_id])
       feed.fetch!(http_fetcher)
+      return construct_last_run(feed, http_fetcher, options[:latest_atom_entry_id])
+    end
 
-      pipelines = {}
-      stages = feed.entries.collect do |entry|
-        Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines, :http_fetcher => http_fetcher)
+    def all_runs(options={})
+      options = ({:ssl => false, :host => 'localhost', :port => 8153, :username => nil, :password => nil}).merge(options)
+      http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
+      feed_url = "#{options[:ssl] ? 'https' : 'http'}://#{options[:host]}:#{options[:port]}/go/api/pipelines.xml"
+      feed = GoApiClient::Atom::Feed.new(feed_url, nil)
+      feed = feed.fetch_all!(http_fetcher)
+      feed.inject({}) do |memo, (href, entries)|
+        memo[href] = construct_last_run(entries, http_fetcher, nil)
+        memo
       end
-
-      pipelines.values.each do |p|
-        p.stages = p.stages.sort_by {|s| s.completed_at }
-      end
-
-      pipelines = pipelines.values.sort_by {|p| p.counter}
-      latest_atom_entry_id = stages.empty? ? options[:latest_atom_entry_id] : feed.entries.first.id
-      return LastRun.new(pipelines, latest_atom_entry_id)
     end
 
     # Answers if a build is in progress. For the list of supported connection options see {GoApiClient.runs #runs}
@@ -95,6 +95,23 @@ module GoApiClient
 
       uri = "#{options[:ssl] ? 'https' : 'http'}://#{options[:host]}:#{options[:port]}/go/api/pipelines/#{options[:pipeline_name]}/schedule"
       GoApiClient::HttpFetcher.new.post(uri)
+    end
+
+    private
+
+    def construct_last_run(feed, http_fetcher, last_atom_entry_id)
+      pipelines = {}
+      stages = feed.entries.collect do |entry|
+        Stage.from(entry.stage_href, :authors => entry.authors, :pipeline_cache => pipelines, :http_fetcher => http_fetcher)
+      end
+
+      pipelines.values.each do |p|
+        p.stages = p.stages.sort_by {|s| s.completed_at }
+      end
+
+      pipelines = pipelines.values.sort_by {|p| p.counter}
+      latest_atom_entry_id = stages.empty? ? last_atom_entry_id : feed.entries.first.id
+      return LastRun.new(pipelines, latest_atom_entry_id)
     end
   end
 end
