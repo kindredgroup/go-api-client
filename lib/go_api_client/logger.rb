@@ -4,5 +4,10 @@ module GoApiClient
   class <<self
     attr_accessor :logger
   end
-  self.logger ||= ::Logger.new(STDERR)
+
+  if defined?(Rails.logger)
+    self.logger = Rails.logger
+  else
+    self.logger = ::Logger.new(STDERR)
+  end
 end
