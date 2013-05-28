@@ -13,6 +13,7 @@ require 'go_api_client/job'
 require 'go_api_client/artifact'
 require 'go_api_client/commit'
 require 'go_api_client/user'
+require 'go_api_client/logger'
 
 module GoApiClient
 
@@ -78,7 +79,7 @@ module GoApiClient
       options = ({:ssl => false, :port => 8153, :username => nil, :password => nil, :pipeline_name => 'defaultPipeline'}).merge(options)
       http_fetcher = GoApiClient::HttpFetcher.new(:username => options[:username], :password => options[:password])
       url = "#{options[:ssl] ? 'https' : 'http'}://#{options[:host]}:#{options[:port]}/go/cctray.xml"
-      doc = Nokogiri::XML(http_fetcher.get_response_body(url))
+      doc = Nokogiri::XML(http_fetcher.get!(url))
       doc.css("Project[activity='Building'][name^='#{options[:pipeline_name]} ::']").count > 0
     end
 
@@ -94,7 +95,7 @@ module GoApiClient
       options = ({:ssl => false, :port => 8153, :username => nil, :password => nil, :pipeline_name => 'defaultPipeline'}).merge(options)
 
       uri = "#{options[:ssl] ? 'https' : 'http'}://#{options[:host]}:#{options[:port]}/go/api/pipelines/#{options[:pipeline_name]}/schedule"
-      GoApiClient::HttpFetcher.new.post(uri)
+      GoApiClient::HttpFetcher.new.post!(uri)
     end
 
     private

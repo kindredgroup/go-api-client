@@ -13,7 +13,7 @@ module GoApiClient
         feed_url = @atom_feed_url
 
         begin
-          doc = Nokogiri::XML(http_fetcher.get_response_body(feed_url))
+          doc = Nokogiri::XML(http_fetcher.get!(feed_url))
           feed_page = GoApiClient::Atom::FeedPage.new(doc.root).parse!
 
           self.entries += if feed_page.contains_entry?(@last_entry_id)
@@ -28,7 +28,7 @@ module GoApiClient
 
       def fetch_all!(http_fetcher = HttpFetcher.new)
         begin
-          doc = Nokogiri::XML(http_fetcher.get_response_body(@atom_feed_url))
+          doc = Nokogiri::XML(http_fetcher.get!(@atom_feed_url))
           doc.css("pipeline").inject({}) do |hash, feed|
             hash[feed.attr("href")] = GoApiClient::Atom::Feed.new(feed.attr("href")).fetch!
             hash
