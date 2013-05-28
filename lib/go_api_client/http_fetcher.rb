@@ -4,15 +4,15 @@ require 'net/https'
 module GoApiClient
   class HttpFetcher
 
-    class HttpError < StandardError
+    class ConnectionError <StandardError
+    end
+
+    class HttpError < ConnectionError
       attr_reader :http_code
       def initialize(msg, http_code)
         super(msg)
         @http_code = http_code
       end
-    end
-
-    class ConnectionError <StandardError
     end
 
     NET_HTTP_EXCEPTIONS = [
@@ -48,12 +48,12 @@ module GoApiClient
       class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
       def #{meth}!(url, options={})
         response_body = #{meth}(url, options)
-          return response_body
         if failure?
           message = "Could not fetch url \#{url}."
           GoApiClient.logger.error("\#{message} The response returned status \#{status} with body `\#{response_body}'")
           raise HttpError.new(message, status)
         end
+        return response_body
       rescue *NET_HTTP_EXCEPTIONS => e
         message = "Could not connect to url \#{url}."
         GoApiClient.logger.error("\#{message}. The error was \#{e.message}")
