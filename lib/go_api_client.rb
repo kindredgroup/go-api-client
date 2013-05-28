@@ -14,6 +14,7 @@ require 'go_api_client/artifact'
 require 'go_api_client/commit'
 require 'go_api_client/user'
 require 'go_api_client/logger'
+require 'go_api_client/engine' if defined?(::Rails)
 
 module GoApiClient
 
