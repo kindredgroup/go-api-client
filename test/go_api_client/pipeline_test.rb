@@ -18,6 +18,7 @@ module GoApiClient
       assert_equal ["Update README", "Fixed build"], pipeline.commits.collect(&:message)
       assert_equal "urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:1", pipeline.identifier
       assert_equal Time.parse('2012-02-23 11:46:15 UTC'), pipeline.schedule_time
+      assert_equal 'master', pipeline.branch_name
     end
 
     test "should return a list of authors from the first stage" do

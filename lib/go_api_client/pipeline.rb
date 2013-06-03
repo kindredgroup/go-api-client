@@ -1,6 +1,6 @@
 module GoApiClient
   class Pipeline
-    attr_accessor :url, :commits, :label, :counter, :authors, :stages, :name, :http_fetcher, :identifier, :schedule_time
+    attr_accessor :url, :commits, :label, :counter, :authors, :stages, :name, :http_fetcher, :identifier, :schedule_time, :branch_name
 
     include GoApiClient::Helpers::SimpleAttributesSupport
 
@@ -22,13 +22,14 @@ module GoApiClient
     end
 
     def parse!
-      self.name       = @root.attributes["name"].value
-      self.label      = @root.attributes["label"].value
-      self.counter    = @root.attributes["counter"].value.to_i
-      self.url        = href_from(@root.xpath("./link[@rel='self']"))
-      self.identifier = @root.xpath("./id").first.content
+      self.name          = @root.attributes["name"].value
+      self.label         = @root.attributes["label"].value
+      self.counter       = @root.attributes["counter"].value.to_i
+      self.url           = href_from(@root.xpath("./link[@rel='self']"))
+      self.identifier    = @root.xpath("./id").first.content
       self.schedule_time = Time.parse(@root.xpath('./scheduleTime').first.content).utc
-      self.commits    = @root.xpath('./materials/material[@type = "GitMaterial"]/modifications/changeset').collect do |changeset|
+      self.branch_name        = @root.xpath('./materials/material').first.attribute('branch').value
+      self.commits       = @root.xpath('./materials/material[@type = "GitMaterial"]/modifications/changeset').collect do |changeset|
         Commit.new(changeset).parse!
       end
 
@@ -44,6 +45,5 @@ module GoApiClient
     def href_from(xml)
       xml.first.attribute('href').value unless xml.empty?
     end
-
   end
 end
