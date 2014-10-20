@@ -9,3 +9,5 @@ TAGS
 .yardoc
 doc
 /bin/
+*.gem
+/*.iml

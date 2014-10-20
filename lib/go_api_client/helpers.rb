@@ -1,1 +1,0 @@
-require 'go_api_client/helpers/simple_attribute_support'

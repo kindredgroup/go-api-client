@@ -47,7 +47,7 @@ module GoApiClient
     %w(get post).each do |meth|
       class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
       def #{meth}!(url, options={})
-        response_body = #{meth}(url, options)
+        response_body = #{meth}(url, options).body
         if failure?
           message = "Could not fetch url \#{url}."
           GoApiClient.logger.error("\#{message} The response returned status \#{status} with body `\#{response_body}'")
@@ -78,7 +78,8 @@ module GoApiClient
     private
 
 
-      def get(url, options={})
+      def get(url, options={}, limit = 10)
+        raise ArgumentError, 'HTTP redirect too deep' if limit == 0
         uri = URI.parse(url)
 
         password = options[:password] || uri.password || @password
@@ -90,15 +91,22 @@ module GoApiClient
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = uri.scheme == 'https'
 
-        @response = http.start do |http|
+        response = http.start do |http|
           req = Net::HTTP::Get.new(uri.request_uri)
           req.basic_auth(username, password) if username || password
           http.request(req)
         end
-        return @response.body
+
+        case response
+          when Net::HTTPRedirection then @response = get(response['location'], options, limit - 1)
+          else @response = response
+        end
+
+        @response
       end
 
-      def post(url, options={})
+      def post(url, options={}, limit = 10)
+        raise ArgumentError, 'HTTP redirect too deep' if limit == 0
         uri = URI.parse(url)
 
         password = options[:password] || uri.password || @password
@@ -118,8 +126,14 @@ module GoApiClient
         req.basic_auth(username, password) if username || password
 
         req.set_form_data(params)
-        @response = http.request(req)
-        return @response.body
+        response = http.request(req)
+
+        case response
+          when Net::HTTPRedirection then @response = post(response['location'], options, limit - 1)
+          else @response = response
+        end
+
+        @response
       end
   end
 end
