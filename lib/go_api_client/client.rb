@@ -13,7 +13,7 @@ module GoApiClient
 
     def api(name)
       class_name = name.slice(0, 1).capitalize + name.slice(1..-1)
-      api_class = Object.const_get("#{self.class.to_s.split("::").first}::Api::#{class_name}")
+      api_class = "#{self.class.to_s.split('::').first}::Api::#{class_name}".split('::').inject(Object) { |n,c| n.const_get c }
       api_class.new(@base_uri, @http_fetcher)
     end
   end
