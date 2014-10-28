@@ -1,6 +1,6 @@
 module GoApiClient
   module Domain
-    class Author < GoApiClient::Domain::Helper
+    class Author < GoApiClient::AttributeHelper
       attr_accessor :name, :email, :uri
 
       def initialize(attributes={})

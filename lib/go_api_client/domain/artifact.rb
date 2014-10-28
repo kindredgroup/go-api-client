@@ -1,6 +1,6 @@
 module GoApiClient
   module Domain
-    class Artifact < GoApiClient::Domain::Helper
+    class Artifact < GoApiClient::AttributeHelper
 
       attr_accessor :base_uri, :src, :dest, :artifact_type
 

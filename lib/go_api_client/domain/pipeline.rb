@@ -1,6 +1,6 @@
 module GoApiClient
   module Domain
-    class Pipeline < GoApiClient::Domain::Helper
+    class Pipeline < GoApiClient::AttributeHelper
 
       # TODO: Add materials
 

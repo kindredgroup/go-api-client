@@ -1,6 +1,6 @@
 module GoApiClient
   module Domain
-    class Feed < GoApiClient::Domain::Helper
+    class Feed < GoApiClient::AttributeHelper
 
       attr_accessor :updated, :title, :id, :self_uri, :next_uri
       attr_accessor :parsed_entries, :parsed_authors

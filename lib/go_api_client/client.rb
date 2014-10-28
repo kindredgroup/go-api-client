@@ -11,10 +11,10 @@ module GoApiClient
       end
     end
 
-    def api(name)
+    def api(name, options={})
       class_name = name.slice(0, 1).capitalize + name.slice(1..-1)
-      api_class = "#{self.class.to_s.split('::').first}::Api::#{class_name}".split('::').inject(Object) { |n,c| n.const_get c }
-      api_class.new(@base_uri, @http_fetcher)
+      api_class = "#{self.class.to_s.split('::').first}::Api::#{class_name}".split('::').inject(Object) { |n, c| n.const_get c }
+      api_class.new({:base_uri => @base_uri, :http_fetcher => @http_fetcher}.merge(options))
     end
   end
 end

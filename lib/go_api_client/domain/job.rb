@@ -1,6 +1,6 @@
 module GoApiClient
   module Domain
-    class Job < GoApiClient::Domain::Helper
+    class Job < GoApiClient::AttributeHelper
 
       attr_accessor :artifacts_uri, :console_log_url, :self_uri, :id, :name, :parsed_artifacts,
                     :duration, :result, :scheduled, :assigned, :preparing, :building, :completing, :completed

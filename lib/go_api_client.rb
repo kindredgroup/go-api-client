@@ -5,8 +5,10 @@ module GoApiClient
   autoload :Client, 'go_api_client/client'
   autoload :HttpFetcher, 'go_api_client/http_fetcher'
   autoload :Engine, 'go_api_client/engine' if defined?(::Rails)
+  autoload :AttributeHelper, 'go_api_client/attribute_helper'
 
   module Api
+    autoload :AbstractApi, 'go_api_client/api/abstract_api'
     autoload :Cctray, 'go_api_client/api/cctray'
     autoload :Pipeline, 'go_api_client/api/pipeline'
     autoload :Feed, 'go_api_client/api/feed'
@@ -21,7 +23,6 @@ module GoApiClient
     autoload :Entry, 'go_api_client/domain/entry'
     autoload :Feed, 'go_api_client/domain/feed'
     autoload :InternalCache, 'go_api_client/domain/internal_cache'
-    autoload :Helper, 'go_api_client/domain/helper'
     autoload :Job, 'go_api_client/domain/job'
     autoload :ScheduledJob, 'go_api_client/domain/scheduled_job'
     autoload :Pipeline, 'go_api_client/domain/pipeline'

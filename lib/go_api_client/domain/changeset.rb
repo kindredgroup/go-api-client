@@ -1,6 +1,6 @@
 module GoApiClient
   module Domain
-    class Changeset < GoApiClient::Domain::Helper
+    class Changeset < GoApiClient::AttributeHelper
 
       attr_accessor :parsed_user, :checkin_time, :revision, :message, :files, :uri
 

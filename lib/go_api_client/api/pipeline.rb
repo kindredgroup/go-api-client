@@ -2,15 +2,11 @@ require 'nokogiri'
 
 module GoApiClient
   module Api
-    class Pipeline
-      attr_reader :http_fetcher, :base_uri
+    class Pipeline < GoApiClient::Api::AbstractApi
 
-      def initialize(base_uri, http_fetcher, options = {})
-        options = ({:pipeline_cache => {}, :stage_cache => {}}).merge(options)
-        @http_fetcher = http_fetcher
-        @base_uri = base_uri
-        @pipeline_cache = options[:pipeline_cache]
-        @stage_cache = options[:stage_cache]
+      def initialize(attributes = {})
+        attributes = ({:pipeline_cache => {}, :stage_cache => {}}).merge(attributes)
+        super(attributes)
       end
 
       # Schedule a particular pipeline with the latest available materials.
@@ -74,7 +70,7 @@ module GoApiClient
         pipeline = GoApiClient::Parsers::Pipeline.parse(Nokogiri::XML(@http_fetcher.get!(uri)).root)
         @pipeline_cache[GoApiClient::Domain::InternalCache.new(pipeline.self_uri, options)] ||= pipeline
         if options[:eager_parser] && options[:eager_parser].include?(:stage)
-          stage_api = GoApiClient::Api::Stage.new(@base_uri, @http_fetcher, {:pipeline_cache => @pipeline_cache, :stage_cache => @stage_cache})
+          stage_api = GoApiClient::Api::Stage.new({:base_uri => @base_uri, :http_fetcher => @http_fetcher, :pipeline_cache => @pipeline_cache, :stage_cache => @stage_cache})
           pipeline.parsed_stages = pipeline.stages.collect do |stage_uri|
             stage = @stage_cache[GoApiClient::Domain::InternalCache.new(stage_uri, options)] || stage_api.stage(options.merge({:stage_uri => stage_uri}))
             @stage_cache[GoApiClient::Domain::InternalCache.new(stage_uri, options)] ||= stage
@@ -83,6 +79,9 @@ module GoApiClient
         end
         pipeline
       end
+
+      private
+      attr_accessor :pipeline_cache, :stage_cache
     end
   end
 end

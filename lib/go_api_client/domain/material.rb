@@ -1,6 +1,6 @@
 module GoApiClient
   module Domain
-    class Material < GoApiClient::Domain::Helper
+    class Material < GoApiClient::AttributeHelper
 
       attr_accessor :uri, :type, :pipeline_name, :stage_name, :branch, :url
       attr_accessor :parsed_changesets

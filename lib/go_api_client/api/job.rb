@@ -2,12 +2,10 @@ require 'nokogiri'
 
 module GoApiClient
   module Api
-    class Job
-      attr_reader :http_fetcher, :base_uri
+    class Job < GoApiClient::Api::AbstractApi
 
-      def initialize(base_uri, http_fetcher)
-        @http_fetcher = http_fetcher
-        @base_uri = base_uri
+      def initialize(attributes = {})
+        super(attributes)
       end
 
       def job(options = {})

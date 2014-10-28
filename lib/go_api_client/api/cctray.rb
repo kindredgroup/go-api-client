@@ -2,12 +2,10 @@ require 'nokogiri'
 
 module GoApiClient
   module Api
-    class Cctray
-      attr_reader :http_fetcher, :base_uri
+    class Cctray < GoApiClient::Api::AbstractApi
 
-      def initialize(base_uri, http_fetcher)
-        @http_fetcher = http_fetcher
-        @base_uri = base_uri
+      def initialize(attributes = {})
+        super(attributes)
       end
 
       # Answers if a build is in progress. For the list of supported connection options

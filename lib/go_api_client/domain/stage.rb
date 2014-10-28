@@ -1,6 +1,6 @@
 module GoApiClient
   module Domain
-    class Stage < GoApiClient::Domain::Helper
+    class Stage < GoApiClient::AttributeHelper
 
       # Self attributes
       attr_accessor :name, :counter
