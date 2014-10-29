@@ -10,6 +10,7 @@ module GoApiClient
   module Api
     autoload :AbstractApi, 'go_api_client/api/abstract_api'
     autoload :Cctray, 'go_api_client/api/cctray'
+    autoload :Config, 'go_api_client/api/config'
     autoload :Pipeline, 'go_api_client/api/pipeline'
     autoload :Feed, 'go_api_client/api/feed'
     autoload :Job, 'go_api_client/api/job'
@@ -30,6 +31,12 @@ module GoApiClient
     autoload :Material, 'go_api_client/domain/material'
     autoload :Project, 'go_api_client/domain/project'
     autoload :User, 'go_api_client/domain/user'
+
+    module Config
+      autoload :Pipeline, 'go_api_client/domain/config/pipeline'
+      autoload :Stage, 'go_api_client/domain/config/stage'
+      autoload :Job, 'go_api_client/domain/config/job'
+    end
   end
 
   module Parsers
@@ -47,5 +54,11 @@ module GoApiClient
     autoload :Feed, 'go_api_client/parsers/feed_parser'
     autoload :Project, 'go_api_client/parsers/project_parser'
     autoload :User, 'go_api_client/parsers/user_parser'
+
+    module Config
+      autoload :Pipeline, 'go_api_client/parsers/config/pipeline_parser'
+      autoload :Stage, 'go_api_client/parsers/config/stage_parser'
+      autoload :Job, 'go_api_client/parsers/config/job_parser'
+    end
   end
 end
