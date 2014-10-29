@@ -15,6 +15,7 @@ module GoApiClient
                   :last_build_status => root.attributes['lastBuildStatus'].value,
                   :last_build_label => root.attributes['lastBuildLabel'].value,
                   :last_build_time => Time.parse(root.attributes['lastBuildTime'].value).utc,
+                  :web_uri => root.attributes['webUrl'].value,
                   :parsed_messages => messages
               })
         end

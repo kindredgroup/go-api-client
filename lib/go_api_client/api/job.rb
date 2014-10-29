@@ -20,8 +20,13 @@ module GoApiClient
 
       def scheduled_jobs
         uri = "#{@base_uri}/api/jobs/scheduled.xml"
-        Nokogiri::XML(@http_fetcher.post!(uri)).root.xpath('./job').collect do |element|
-          GoApiClient::Parsers::ScheduledJob.parse(element)
+        doc = Nokogiri::XML(@http_fetcher.post!(uri))
+        if doc.root
+          doc.root.xpath('./job').collect do |element|
+            GoApiClient::Parsers::ScheduledJob.parse(element)
+          end
+        else
+          []
         end
       end
     end
