@@ -28,6 +28,7 @@ module GoApiClient
     autoload :Pipeline, 'go_api_client/domain/pipeline'
     autoload :Stage, 'go_api_client/domain/stage'
     autoload :Material, 'go_api_client/domain/material'
+    autoload :Project, 'go_api_client/domain/project'
     autoload :User, 'go_api_client/domain/user'
   end
 
@@ -44,6 +45,7 @@ module GoApiClient
     autoload :Author, 'go_api_client/parsers/author_parser'
     autoload :Entry, 'go_api_client/parsers/entry_parser'
     autoload :Feed, 'go_api_client/parsers/feed_parser'
+    autoload :Project, 'go_api_client/parsers/project_parser'
     autoload :User, 'go_api_client/parsers/user_parser'
   end
 end

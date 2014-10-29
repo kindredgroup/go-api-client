@@ -15,10 +15,10 @@ require 'go_api_client'
 
 client = GoApiClient::Client.new({:host => 'go.example.com'})
 # check if the server is building 'MyProject' pipeline
-client.api(:cctray).build_in_progress?('MyProject')
+! client.api(:cctray).projects({:pipeline_name => 'MyProject', :activity => 'Building'}).empty?
 
 # check if the build has finished
-client.api(:cctray).build_finished?('MyProject')
+client.api(:cctray).projects({:pipeline_name => 'MyProject', :activity => 'Building'}).empty?
 
 # schedule a pipeline
 client.api(:pipeline).schedule({:pipeline_name => 'MyProject'})

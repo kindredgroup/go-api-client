@@ -17,8 +17,8 @@ module GoApiClient
       stub_request(:get, 'http://go-server.2.project:8153/go/cctray.xml').to_return(:body => feed)
 
       cctray_api = GoApiClient::Client.new({:host => 'go-server.2.project'}).api(:cctray)
-      assert       cctray_api.build_in_progress?('defaultPipeline')
-      assert_false cctray_api.build_in_progress?('anotherPipeline')
+      assert_false cctray_api.projects({:pipeline_name => 'defaultPipeline', :activity => 'Building'}).empty?
+      assert       cctray_api.projects({:pipeline_name => 'anotherPipeline', :activity => 'Building'}).empty?
     end
 
     test 'should report that Go is sleeping if all stages in specified pipeline are sleeping' do
@@ -35,14 +35,14 @@ module GoApiClient
       stub_request(:get, 'http://go-server.2.project:8153/go/cctray.xml').to_return(:body => feed)
 
       cctray_api = GoApiClient::Client.new({:host => 'go-server.2.project'}).api(:cctray)
-      assert        cctray_api.build_finished?('defaultPipeline')
-      assert_false  cctray_api.build_finished?('anotherPipeline')
+      assert_false cctray_api.projects({:pipeline_name => 'anotherPipeline', :activity => 'Building'}).empty?
+      assert       cctray_api.projects({:pipeline_name => 'defaultPipeline', :activity => 'Building'}).empty?
     end
 
     test 'should handle empty feeds' do
       stub_request(:get, 'http://go-server.2.project:8153/go/cctray.xml').to_return(:body => nil)
       cctray_api = GoApiClient::Client.new({:host => 'go-server.2.project'}).api(:cctray)
-      assert_false cctray_api.build_in_progress?('defaultPipeline')
+      assert       cctray_api.projects({:pipeline_name => 'defaultPipeline', :activity => 'Building'}).empty?
     end
 
   end
