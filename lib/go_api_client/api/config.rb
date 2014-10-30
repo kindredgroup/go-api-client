@@ -24,7 +24,7 @@ module GoApiClient
       end
 
       def pipelines(options={})
-        options = ({:group_name => nil, :pipeline_name => nil, :config_uri => nil}).merge(options)
+        options = ({:group_name => nil, :pipeline_name => nil, :config_uri => nil, :eager_parser => []}).merge(options)
         uri = options[:config_uri] ? options[:config_uri] : "#{@base_uri}/api/admin/config.xml"
 
         group_args = []
@@ -45,7 +45,11 @@ module GoApiClient
         doc = Nokogiri::XML(@http_fetcher.get!(uri)).remove_namespaces!
         if doc.root
           doc.root.xpath(xpath_str).collect do |element|
-            GoApiClient::Parsers::Config::Pipeline.parse(element)
+            pipeline = GoApiClient::Parsers::Config::Pipeline.parse(element)
+            if options[:eager_parser] && options[:eager_parser].include?(:template) && pipeline.template
+              pipeline.parsed_template = templates(options.merge({:template_name => pipeline.template}))
+            end
+            pipeline
           end
         else
           []
