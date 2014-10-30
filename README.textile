@@ -32,6 +32,27 @@ client.api(:stage).stage({:stage_uri => pipeline.stages.first})
 
 # Eager get feed for a pipeline tougher with related stages and jobs
 client.api(:feed).feed({:pipeline_name => 'MyProject', :eager_parser => [:pipeline, :stage, :job]})
+
+# Get all properties for a given job
+client.api(:properties).properties({:pipeline_name => 'MyProject', :pipeline_counter => 1, :stage_name => 'defaultStage', :stage_counter => 1, :job_name => 'defaultJob'})
+
+# Get value of a specific property for a given job
+client.api(:properties).properties({:pipeline_name => 'MyProject', :pipeline_counter => 1, :stage_name => 'defaultStage', :stage_counter => 1, :job_name => 'defaultJob', :property_name => 'cruise_agent'})
+
+# Create a property for a given job
+client.api(:properties).create_property({:pipeline_name => 'MyProject', :pipeline_counter => 1, :stage_name => 'defaultStage', :stage_counter => 1, :job_name => 'defaultJob', :property_name => 'myproperty', :property_value => 'Showcase_for_I29'})
+
+# Get configuration of 'MyProject' pipeline
+client.api(:config).pipelines({:pipeline_name => 'MyProject'})
+
+# Get configuration of 'MyProject' pipeline eagerly parsing the template
+client.api(:config).pipelines({:pipeline_name => 'MyProject', :eager_parser => [:template]})
+
+# Get configuration for all pipelines
+client.api(:config).pipelines
+
+# Get configuration of a template
+client.api(:config).templates({:template_name => 'MyTemplate'})
 </pre>
 
 h2. License
