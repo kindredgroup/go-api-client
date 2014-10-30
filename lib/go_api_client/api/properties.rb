@@ -23,7 +23,7 @@ module GoApiClient
           # ignore, error message will be logged
         end
 
-        body ? CSV.new(body, :headers => true, :header_converters => :symbol).to_a.map { |row| row.to_hash } : []
+        body ? CSV.new(body, :headers => true).to_a.map { |row| row.to_hash } : []
       end
 
       def create_property(options = {})
