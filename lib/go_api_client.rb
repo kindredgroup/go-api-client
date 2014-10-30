@@ -12,6 +12,7 @@ module GoApiClient
     autoload :Cctray, 'go_api_client/api/cctray'
     autoload :Config, 'go_api_client/api/config'
     autoload :Pipeline, 'go_api_client/api/pipeline'
+    autoload :Properties, 'go_api_client/api/properties'
     autoload :Feed, 'go_api_client/api/feed'
     autoload :Job, 'go_api_client/api/job'
     autoload :Stage, 'go_api_client/api/stage'
