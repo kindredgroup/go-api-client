@@ -13,27 +13,46 @@ See "GoApiClient":http://rubydoc.info/github/ThoughtWorksInc/go-api-client/GoApi
 <pre>
 require 'go_api_client'
 
-# check if the server is building
-GoApiClient.build_in_progress?(:host => 'go.example.com')
+client = GoApiClient::Client.new({:host => 'go.example.com'})
+# check if the server is building 'MyProject' pipeline
+! client.api(:cctray).projects({:pipeline_name => 'MyProject', :activity => 'Building'}).empty?
 
 # check if the build has finished
-GoApiClient.build_finished?(:host => 'go.example.com')
+client.api(:cctray).projects({:pipeline_name => 'MyProject', :activity => 'Building'}).empty?
 
 # schedule a pipeline
-GoApiClient.schedule_pipeline(:host => 'go.example.com', :pipeline_name => 'MyProject')
+client.api(:pipeline).schedule({:pipeline_name => 'MyProject'})
 
-# fetch a list of all pipelines
-latest_atom_entry_id = nil
-while true
-  last_run = GoApiClient.runs(:host => 'go.example.com', :pipeline_name => 'MyProject', :latest_atom_entry_id => latest_atom_entry_id)
-  latest_atom_entry_id = last_run.latest_atom_entry_id # => the last stage that was seen by the api client, keep this for further calls to #runs
+# Eager fetch pipeline information with parsed stages and jobs
+client.api(:pipeline).pipeline({:pipeline_name => 'MyProject', :pipeline_id => 1, :eager_parser => [:stage, :job]})
 
-  pipelines = last_run.pipelines
-  last_pipeline = pipelines.last
-  puts "Finished running stage #{last_pipeline.stages.last.name} from pipeline #{last_pipeline.name}."
-  puts "The last commit(#{last_pipeline.commits.last.revision}) was checked in by #{last_pipeline.commits.last.user}"
-  sleep 10
-end
+# Lazy fetch pipeline and its first stage
+pipeline = client.api(:pipeline).pipeline({:pipeline_name => 'MyProject', :pipeline_id => 1})
+client.api(:stage).stage({:stage_uri => pipeline.stages.first})
+
+# Eager get feed for a pipeline tougher with related stages and jobs
+client.api(:feed).feed({:pipeline_name => 'MyProject', :eager_parser => [:pipeline, :stage, :job]})
+
+# Get all properties for a given job
+client.api(:properties).properties({:pipeline_name => 'MyProject', :pipeline_counter => 1, :stage_name => 'defaultStage', :stage_counter => 1, :job_name => 'defaultJob'})
+
+# Get value of a specific property for a given job
+client.api(:properties).properties({:pipeline_name => 'MyProject', :pipeline_counter => 1, :stage_name => 'defaultStage', :stage_counter => 1, :job_name => 'defaultJob', :property_name => 'cruise_agent'})
+
+# Create a property for a given job
+client.api(:properties).create_property({:pipeline_name => 'MyProject', :pipeline_counter => 1, :stage_name => 'defaultStage', :stage_counter => 1, :job_name => 'defaultJob', :property_name => 'myproperty', :property_value => 'Showcase_for_I29'})
+
+# Get configuration of 'MyProject' pipeline
+client.api(:config).pipelines({:pipeline_name => 'MyProject'})
+
+# Get configuration of 'MyProject' pipeline eagerly parsing the template
+client.api(:config).pipelines({:pipeline_name => 'MyProject', :eager_parser => [:template]})
+
+# Get configuration for all pipelines
+client.api(:config).pipelines
+
+# Get configuration of a template
+client.api(:config).templates({:template_name => 'MyTemplate'})
 </pre>
 
 h2. License
@@ -42,6 +61,7 @@ Go API Client Gem is MIT Licensed
 
 The MIT License
 
+Copyright (c) 2014 North Development AB (http://www.unibet.com)
 Copyright (c) 2012 ThoughtWorks, Inc. (http://thoughtworks.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

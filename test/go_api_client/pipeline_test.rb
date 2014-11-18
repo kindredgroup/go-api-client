@@ -1,36 +1,25 @@
-require "test_helper"
+require 'test_helper'
 
 module GoApiClient
   class PipelineTest < Test::Unit::TestCase
 
+    LINK = 'http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml'
     def setup
-      stub_request(:get, "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml").to_return(:body => file_contents("pipelines_1.xml"))
+      stub_request(:get, LINK).to_return(:body => file_contents('pipelines_1.xml'))
     end
 
-    test "should fetch the pipeline xml and populate itself" do
-      link = "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml"
-      pipeline = GoApiClient::Pipeline.from(link)
+    test 'should fetch the pipeline xml and populate itself' do
+      pipeline = GoApiClient::Client.new.api(:pipeline).pipeline({:pipeline_uri => LINK})
 
-      assert_equal "1", pipeline.label
+      assert_equal '1', pipeline.label
       assert_equal 99, pipeline.counter
-      assert_equal "defaultPipeline", pipeline.name
-      assert_equal "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml", pipeline.url
-      assert_equal ["Update README", "Fixed build"], pipeline.commits.collect(&:message)
-      assert_equal "urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:1", pipeline.identifier
+      assert_equal 'defaultPipeline', pipeline.name
+      assert_equal 'http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml', pipeline.self_uri
+      assert_equal 'urn:x-go.studios.thoughtworks.com:job-id:defaultPipeline:1', pipeline.id
       assert_equal Time.parse('2012-02-23 11:46:15 UTC'), pipeline.schedule_time
     end
 
-    test "should return a list of authors from the first stage" do
-      link = "http://localhost:8153/go/api/pipelines/defaultPipeline/1.xml"
-      pipeline = GoApiClient::Pipeline.from(link)
-      author_foo = Atom::Author.new(nil, :name => 'foo', :email => 'foo@example.com', :uri => 'http://foo.example.com')
-      author_bar = Atom::Author.new(nil, :name => 'bar', :email => 'bar@example.com', :uri => 'http://bar.example.com')
-
-      pipeline.stages << OpenStruct.new(:authors => [author_foo, author_bar])
-      assert_equal [author_foo, author_bar], pipeline.authors
-    end
-
-    test "should only parse materials with type=GitMaterial" do
+    test 'should only parse materials with type=GitMaterial' do
       doc = Nokogiri::XML.parse %q{<?xml version="1.0" encoding="UTF-8"?>
 
         <pipeline name="GreenInstallers" counter="286" label="286">
@@ -71,14 +60,22 @@ module GoApiClient
         </pipeline>
       }
 
-      pipeline = GoApiClient::Pipeline.new(doc.root).parse!
-      assert_equal 1, pipeline.commits.count
-      commit = pipeline.commits.first
+      pipeline = GoApiClient::Parsers::Pipeline.parse(doc.root)
+      assert_equal 2, pipeline.parsed_materials.count
+      material = pipeline.parsed_materials.first
+      assert_equal 1, material.parsed_changesets.count
+      changeset = material.parsed_changesets.first
 
-      assert_equal 'bc9cc9401b816d753f267227934e535affcb4028',        commit.revision
-      assert_equal User.new('wdephill', 'wdephill@thoughtworks.com'), commit.user
-      assert_equal Time.parse("2013-02-09 00:19:18 UTC"),             commit.time
+      assert_equal 'bc9cc9401b816d753f267227934e535affcb4028',        changeset.revision
+      assert_equal GoApiClient::Domain::User.new('wdephill', 'wdephill@thoughtworks.com'), changeset.parsed_user
+      assert_equal Time.parse('2013-02-09 00:19:18 UTC'),             changeset.checkin_time
     end
 
+    test 'should schedule a build specified' do
+      stub_request(:post, 'http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/schedule')
+      GoApiClient::Client.new({:host => 'go-server.2.project'}).api(:pipeline).schedule({:pipeline_name => 'defaultPipeline'})
+
+      assert_requested(:post, 'http://go-server.2.project:8153/go/api/pipelines/defaultPipeline/schedule', :body => '')
+    end
   end
 end
