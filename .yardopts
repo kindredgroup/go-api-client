@@ -1,6 +1,0 @@
---no-private
---protected
---markup="textile" lib/**/*.rb
---main README.textile
---hide-tag todo
--
