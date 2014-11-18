@@ -1,16 +1,19 @@
-h2. Go API Client Gem
+# Go API Client Gem
 
-This gem provides access to the "ThoughtWorks Studios Go":http://www.thoughtworks-studios.com/go-continuous-delivery API, it is capable of parsing out the atom feed and generate an object graph with all the pipelines/stages/jobs and committer information.
+This gem provides access to the [ThoughtWorks Studios Go](http://www.thoughtworks-studios.com/go-continuous-delivery) API, it is capable of parsing out the atom feed and generate an object graph with all the pipelines/stages/jobs and committer information.
 
-h2. Installation
+[![Build Status](https://api.travis-ci.org/unibet/go-api-client.svg)](https://travis-ci.org/unibet/go-api-client)
+[![Gem Version](https://badge.fury.io/rb/go_api_client.svg)](http://badge.fury.io/rb/go_api_client)
 
-<pre>$ [sudo] gem install go_api_client</pre>
+## Installation
 
-h2. Usage
+```
+sudo gem install go_api_client
+```
 
-See "GoApiClient":http://rubydoc.info/github/ThoughtWorksInc/go-api-client/GoApiClient for supported options and more details.
+## Usage
 
-<pre>
+```
 require 'go_api_client'
 
 client = GoApiClient::Client.new({:host => 'go.example.com'})
@@ -53,9 +56,9 @@ client.api(:config).pipelines
 
 # Get configuration of a template
 client.api(:config).templates({:template_name => 'MyTemplate'})
-</pre>
+```
 
-h2. License
+## License
 
 Go API Client Gem is MIT Licensed
 
@@ -81,4 +84,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-

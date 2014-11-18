@@ -11,3 +11,5 @@ doc
 /bin/
 *.gem
 /*.iml
+*.lock
+/vendor
