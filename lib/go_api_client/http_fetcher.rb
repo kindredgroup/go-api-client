@@ -1,5 +1,6 @@
 require 'net/http'
 require 'net/https'
+require 'json'
 
 module GoApiClient
   class HttpFetcher
@@ -44,9 +45,10 @@ module GoApiClient
       @username = options[:username]
       @password = options[:password]
       @ssl_verify_mode = options[:ssl_verify_mode]
+      @read_timeout = options[:read_timeout]
     end
 
-    %w(get post).each do |meth|
+    %w(get post delete patch).each do |meth|
       class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
       def #{meth}!(url, options={})
         response_body = #{meth}(url, options).body
@@ -61,6 +63,10 @@ module GoApiClient
         GoApiClient.logger.error("\#{message}. The error was \#{e.message}")
         GoApiClient.logger.error(e.backtrace.collect {|l| "    \#{l}"}.join("\n"))
         raise ConnectionError.new(e)
+      end
+
+      def #{meth}(url, options={}, limit=10)
+        call('#{meth}', url, options, limit)
       end
       RUBY_EVAL
     end
@@ -78,70 +84,43 @@ module GoApiClient
     end
 
     private
-
-
-    def get(url, options={}, limit = 10)
+    def call(method_name, url, options, limit)
       raise ArgumentError, 'HTTP redirect too deep' if limit == 0
       uri = URI.parse(url)
 
       password = options[:password] || uri.password || @password
       username = options[:username] || uri.user || @username
       ssl_verify_mode = options[:ssl_verify_mode] || @ssl_verify_mode
-      params = options[:params] || {}
-
-      uri.query = URI.encode_www_form(params) if params.any?
-
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = uri.scheme == 'https'
-      http.verify_mode = ssl_verify_mode == 0 ? OpenSSL::SSL::VERIFY_NONE : OpenSSL::SSL::VERIFY_PEER
-
-
-      response = http.start do |http|
-        req = Net::HTTP::Get.new(uri.request_uri)
-        req.basic_auth(username, password) if username || password
-        http.request(req)
-      end
-
-      case response
-        when Net::HTTPRedirection then
-          @response = get(response['location'], options, limit - 1)
-        else
-          @response = response
-      end
-
-      @response
-    end
-
-    def post(url, options={}, limit = 10)
-      raise ArgumentError, 'HTTP redirect too deep' if limit == 0
-      uri = URI.parse(url)
-
-      password = options[:password] || uri.password || @password
-      username = options[:username] || uri.user || @username
-      ssl_verify_mode = options[:ssl_verify_mode] || @ssl_verify_mode
+      read_timeout = options[:read_timeout] || @read_timeout || 60
       params = options[:params] || {}
       headers = options[:headers] || {}
 
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = uri.scheme == 'https'
       http.verify_mode = ssl_verify_mode == 0 ? OpenSSL::SSL::VERIFY_NONE : OpenSSL::SSL::VERIFY_PEER
+      http.read_timeout = read_timeout
 
-      req = Net::HTTP::Post.new(uri.request_uri)
+      class_name = method_name.slice(0, 1).capitalize + method_name.slice(1..-1)
+      method_class = "Net::HTTP::#{class_name}".split('::').inject(Object) { |n, c| n.const_get c }
+      req = method_class.new(uri.request_uri)
 
       headers.each do |header_name, value|
         req[header_name] = value
       end
 
       req.basic_auth(username, password) if username || password
+      if headers['Content-Type'] && headers['Content-Type'] == 'application/json'
+        req.body = params.to_json
+      else
+        req.set_form_data(params)
+      end
 
-      req.set_form_data(params)
       response = http.request(req)
-
       case response
         when Net::HTTPRedirection then
-          @response = post(response['location'], options, limit - 1)
+          @response = self.send(method_name.to_sym, response['location'], options, limit - 1)
         else
-          @response = response
+         @response = response
       end
 
       @response
