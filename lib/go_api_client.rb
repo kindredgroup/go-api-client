@@ -9,6 +9,7 @@ module GoApiClient
 
   module Api
     autoload :AbstractApi, 'go_api_client/api/abstract_api'
+    autoload :Agent, 'go_api_client/api/agent'
     autoload :Cctray, 'go_api_client/api/cctray'
     autoload :Config, 'go_api_client/api/config'
     autoload :Pipeline, 'go_api_client/api/pipeline'
@@ -19,6 +20,7 @@ module GoApiClient
   end
 
   module Domain
+    autoload :Agent, 'go_api_client/domain/agent'
     autoload :Author, 'go_api_client/domain/author'
     autoload :Artifact, 'go_api_client/domain/artifact'
     autoload :Changeset, 'go_api_client/domain/changeset'
