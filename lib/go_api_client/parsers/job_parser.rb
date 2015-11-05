@@ -17,18 +17,26 @@ module GoApiClient
 
       class << self
         def parse(root)
+          #puts "root #{root}"
           artifacts_uri = root.xpath('./artifacts').first.attributes['baseUri'].value
           attributes = {
               :artifacts_uri => artifacts_uri,
               :self_uri => href_from(root.xpath("./link[@rel='self']")),
               :id => root.xpath('./id').first.content,
               :name => root.attributes['name'].value,
+              :state => root.xpath('./state').first.content,
               :parsed_artifacts => root.xpath('./artifacts/artifact').collect do |artifact_element|
                 GoApiClient::Parsers::Artifact.parse(artifacts_uri, artifact_element)
               end
           }
+          #puts "attributes #{attributes}"
+          #puts "artifacts_uri #{artifacts_uri}"
 
           PROPERTIES.each do |variable, property_name|
+
+            #puts "variable #{variable}"
+            #puts "property_name #{property_name}"
+
             property_value = root.xpath("./properties/property[@name='#{property_name}']").first.content rescue nil
             next if property_value.nil? || property_value.empty?
             if property_name =~ /timestamp/
@@ -37,6 +45,9 @@ module GoApiClient
               property_value = property_value.to_i
             end
             attributes = {variable => property_value}.merge(attributes)
+
+            #puts "property_value #{property_value}"
+
           end
 
           GoApiClient::Domain::Job.new(attributes)
