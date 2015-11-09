@@ -3,7 +3,7 @@ module GoApiClient
     class Job < GoApiClient::AttributeHelper
 
       attr_accessor :artifacts_uri, :console_log_url, :self_uri, :id, :name, :parsed_artifacts,
-                    :duration, :result, :scheduled, :assigned, :preparing, :building, :completing, :completed
+                    :duration, :state, :result, :scheduled, :assigned, :preparing, :building, :completing, :completed
 
       def initialize(attributes={})
         super(attributes)

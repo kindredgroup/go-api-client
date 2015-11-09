@@ -23,11 +23,11 @@ module GoApiClient
               :self_uri => href_from(root.xpath("./link[@rel='self']")),
               :id => root.xpath('./id').first.content,
               :name => root.attributes['name'].value,
+              :state => root.xpath('./state').first.content,
               :parsed_artifacts => root.xpath('./artifacts/artifact').collect do |artifact_element|
                 GoApiClient::Parsers::Artifact.parse(artifacts_uri, artifact_element)
               end
           }
-
           PROPERTIES.each do |variable, property_name|
             property_value = root.xpath("./properties/property[@name='#{property_name}']").first.content rescue nil
             next if property_value.nil? || property_value.empty?
@@ -38,7 +38,6 @@ module GoApiClient
             end
             attributes = {variable => property_value}.merge(attributes)
           end
-
           GoApiClient::Domain::Job.new(attributes)
         end
       end
